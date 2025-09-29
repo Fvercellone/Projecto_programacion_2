@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1759183171 source:d:\github\projecto_programacion_2\tp_progra2\crear_archivos.cpp
+	<iostream>
+	<cctype>
+	"crear_archivos.h"
+
+1759183171 d:\github\projecto_programacion_2\tp_progra2\crear_archivos.h
+
+1759183171 source:d:\github\projecto_programacion_2\tp_progra2\medio_de_pago.cpp
+	<iostream>
+	<cctype>
+	"medio_de_pago.h"
+
+1759183171 d:\github\projecto_programacion_2\tp_progra2\medio_de_pago.h
+
+1759184267 source:d:\github\projecto_programacion_2\tp_progra2\producto.cpp
+	"Producto.h"
+
+1759184250 d:\github\projecto_programacion_2\tp_progra2\producto.h
+	<string>
+	<iostream>
+
+1759184397 source:d:\github\projecto_programacion_2\tp_progra2\marca.cpp
+	"Marca.h"
+
+1759184387 d:\github\projecto_programacion_2\tp_progra2\marca.h
+	<string>
+	<iostream>
+
+1759184455 source:d:\github\projecto_programacion_2\tp_progra2\main.cpp
+	<iostream>
+	"Producto.h"
+

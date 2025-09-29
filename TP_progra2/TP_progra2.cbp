@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="../TP_progra2" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="../TP_progra2" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,7 +34,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Marca.cpp" />
+		<Unit filename="Marca.h" />
+		<Unit filename="crear_archivos.cpp" />
+		<Unit filename="crear_archivos.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="medio_de_pago.cpp" />
+		<Unit filename="medio_de_pago.h" />
+		<Unit filename="producto.cpp" />
+		<Unit filename="producto.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
