@@ -27,7 +27,8 @@ void Producto::mostrarInfo() const {
               << " | Desc: " << descripcion << "\n";
 }
 
-void Producto::agregarStock(int cantidad) { stock += cantidad; }
+void Producto::agregarStock(int cantidad) { stock += cantidad;}
+void Producto::DescontarStock(int cantidad) { stock -= cantidad; }
 
 void Producto::quitarStock(int cantidad) {
     if (cantidad <= stock) stock -= cantidad;

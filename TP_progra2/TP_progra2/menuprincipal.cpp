@@ -16,15 +16,16 @@ void menuPrincipal(Inventario& inventario, ListaMarcas& listaMarcas) {
         cout << "0. Salir\n";
         cout << "Opcion: ";
         cin >> opcion;
+        system("cls");
 
         switch(opcion) {
-            case 1: menuProductos(inventario, listaMarcas); break;
-            case 2: menuMarcas(listaMarcas); break;
-            case 3: cout << "Modulo Ventas pendiente.\n"; break;
-            case 4: cout << "Modulo Facturas pendiente.\n"; break;
-            case 5: cout << "Modulo Recibos pendiente.\n"; break;
-            case 0: cout << "Saliendo...\n"; break;
-            default: cout << "Opcion invalida.\n";
+            case 1: menuProductos(inventario, listaMarcas); system("cls"); ; break;
+            case 2: menuMarcas(listaMarcas); system("cls"); system("cls");  break;
+            case 3: cout << "Modulo Ventas pendiente.\n"; system("cls");  break;
+            case 4: cout << "Modulo Facturas pendiente.\n"; system("cls");  break;
+            case 5: cout << "Modulo Recibos pendiente.\n"; system("cls");  break;
+            case 0: cout << "Saliendo...\n"; system("cls");  break;
+            default: cout << "Opcion invalida.\n"; system("cls");
         }
     } while(opcion != 0);
 }

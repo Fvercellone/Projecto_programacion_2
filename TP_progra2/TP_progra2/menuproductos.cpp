@@ -5,13 +5,14 @@ using namespace std;
 
 void menuProductos(Inventario& inventario, ListaMarcas& listaMarcas) {
     int opcion;
-    do {
+    do {system("cls");
         cout << "\n=== MENU PRODUCTOS ===\n";
         cout << "1. Crear Producto\n";
         cout << "2. Inventario\n";
         cout << "0. Volver\n";
         cout << "Opcion: ";
         cin >> opcion;
+        system("cls");
 
         switch(opcion) {
             case 1: {
@@ -31,9 +32,10 @@ void menuProductos(Inventario& inventario, ListaMarcas& listaMarcas) {
                 } else {
                     cout << "ERROR: Marca inexistente.\n";
                 }
+                system("cls");
                 break;
             }
-            case 2: menuInventario(inventario); break;
+            case 2: menuInventario(inventario);system("cls"); break;
             case 0: break;
             default: cout << "Opcion invalida.\n";
         }

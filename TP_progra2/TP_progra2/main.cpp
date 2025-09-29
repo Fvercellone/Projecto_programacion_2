@@ -2,6 +2,7 @@
 
 int main() {
     Inventario inventario;
+
     ListaMarcas listaMarcas;
 
     menuPrincipal(inventario, listaMarcas);

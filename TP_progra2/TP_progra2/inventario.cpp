@@ -8,6 +8,11 @@ void Inventario::agregarProducto(Producto* p) {
     cantidadTotal++;
 }
 
+void Inventario::DescontarProducto(Producto* p) {
+    listaProductos.push_back(p);
+    cantidadTotal--;
+}
+
 void Inventario::eliminarProducto(int idProducto) {
     for (auto it = listaProductos.begin(); it != listaProductos.end(); ++it) {
         if ((*it)->getIdProducto() == idProducto) {

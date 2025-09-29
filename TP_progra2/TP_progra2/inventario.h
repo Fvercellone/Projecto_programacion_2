@@ -13,6 +13,7 @@ public:
     Inventario();
 
     void agregarProducto(Producto* p);
+    void DescontarProducto(Producto* p);
     void eliminarProducto(int idProducto);
     Producto* buscarProducto(int idProducto);
     void mostrarInventario() const;
