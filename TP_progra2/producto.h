@@ -35,6 +35,7 @@ public:
     // Métodos
     void mostrarInfo() const;
     void agregarStock(int cantidad);
+    void DescontarStock(int cantidad);
     void quitarStock(int cantidad);
 };
 
