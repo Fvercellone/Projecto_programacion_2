@@ -10,6 +10,7 @@ void menuInventario(Inventario& inventario) {
         cout << "2. Eliminar producto\n";
         cout << "3. Ingresar stock\n";
         cout << "4. Descontar stock\n";
+        cout << "5. Mostrar Inventario\n";
         cout << "0. Volver\n";
         cout << "Opcion: ";
         cin >> opcion;
@@ -40,7 +41,9 @@ void menuInventario(Inventario& inventario) {
                 if (p) {
                     cout << "Ingrese cantidad a ingresar: "; cin >> cant;
                     p->agregarStock(cant);
+                    inventario.guardarProductos();
                     cout << "Stock actualizado.\n";
+                  system("pause");
                 } else cout << "Producto no encontrado.\n";
                 system("cls");
                 break;
@@ -51,9 +54,16 @@ void menuInventario(Inventario& inventario) {
                 Producto* p = inventario.buscarProducto(id);
                 if (p) {
                     cout << "Ingrese cantidad a descontar: "; cin >> cant;
-                    p->DescontarStock(cant);
-                    cout << "Stock actualizado.\n";
+                    p->quitarStock(cant);
+                    inventario.guardarProductos();
                 } else cout << "Producto no encontrado.\n";
+                system("pause");
+                system("cls");
+                break;
+            }
+            case 5: {
+                inventario.mostrarInventario();
+                system("pause");
                 system("cls");
                 break;
             }

@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 
 class Producto {
 private:
@@ -15,7 +16,7 @@ private:
 
 public:
     // Constructor
-    Producto(int idP, const std::string& n, const std::string& d, float p, int s, int idM);
+    Producto(int idP = 0, const std::string& n="", const std::string& d="", float p=0, int s=0, int idM=0);
 
     // Getters
     int getIdProducto() const;
@@ -23,20 +24,23 @@ public:
     std::string getDescripcion() const;
     float getPrecio() const;
     int getStock() const;
-    int getIdMarca() const;   // Nuevo getter
+    int getIdMarca() const;
 
     // Setters
     void setNombre(const std::string& n);
     void setDescripcion(const std::string& d);
     void setPrecio(float p);
     void setStock(int s);
-    void setIdMarca(int idM); // Nuevo setter
+    void setIdMarca(int idM);
 
     // Métodos
     void mostrarInfo() const;
     void agregarStock(int cantidad);
-    void DescontarStock(int cantidad);
     void quitarStock(int cantidad);
+
+    // Métodos para archivos
+    void guardarEnArchivo(std::ofstream& archivo) const;
+    bool cargarDesdeArchivo(std::ifstream& archivo);
 };
 
 #endif

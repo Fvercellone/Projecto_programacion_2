@@ -1,10 +1,9 @@
 #include "MenuPrincipal.h"
 
 int main() {
-    Inventario inventario;
 
-    ListaMarcas listaMarcas;
-
+    ListaMarcas listaMarcas("DATA/marcas.txt");
+    Inventario inventario("DATA/productos.txt");
     menuPrincipal(inventario, listaMarcas);
 
     return 0;

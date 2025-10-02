@@ -3,15 +3,16 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 
 class Marca {
 private:
-    int idMarca;           // ID único generado automáticamente
-    std::string nombre;    // Nombre de la marca
+    int idMarca;
+    std::string nombre;
 
 public:
     // Constructor
-    Marca(int id, const std::string& n);
+    Marca(int id = 0, const std::string& n = "");
 
     // Getters
     int getIdMarca() const;
@@ -22,6 +23,10 @@ public:
 
     // Mostrar
     void mostrarInfo() const;
+
+    // Métodos para archivos
+    void guardarEnArchivo(std::ofstream& archivo) const;
+    bool cargarDesdeArchivo(std::ifstream& archivo);
 };
 
 #endif

@@ -5,10 +5,12 @@ using namespace std;
 
 void menuProductos(Inventario& inventario, ListaMarcas& listaMarcas) {
     int opcion;
-    do {system("cls");
+    do {
+        system("cls");
         cout << "\n=== MENU PRODUCTOS ===\n";
         cout << "1. Crear Producto\n";
         cout << "2. Inventario\n";
+        cout << "3. Gestionar Marcas\n";
         cout << "0. Volver\n";
         cout << "Opcion: ";
         cin >> opcion;
@@ -28,14 +30,25 @@ void menuProductos(Inventario& inventario, ListaMarcas& listaMarcas) {
                 cout << "Ingrese ID de la marca: "; cin >> idM;
 
                 if (listaMarcas.buscarMarca(idM)) {
-                    inventario.agregarProducto(new Producto(idP, nombre, desc, precio, stock, idM));
+                    Producto nuevoProducto(idP, nombre, desc, precio, stock, idM);
+                    inventario.agregarProducto(nuevoProducto);
+                    // ↑ ESTA función debería llamar a guardarProductos() automáticamente
+                    cout << "Producto creado exitosamente!\n";
                 } else {
                     cout << "ERROR: Marca inexistente.\n";
                 }
+                system("pause");
                 system("cls");
                 break;
             }
-            case 2: menuInventario(inventario);system("cls"); break;
+            case 2:
+                menuInventario(inventario);
+                system("cls");
+                break;
+            case 3:
+                menuMarcas(listaMarcas);
+                system("cls");
+                break;
             case 0: break;
             default: cout << "Opcion invalida.\n";
         }

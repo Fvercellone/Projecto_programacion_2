@@ -2,23 +2,26 @@
 #define INVENTARIO_H
 
 #include <vector>
+#include <string>
 #include "Producto.h"
 
 class Inventario {
 private:
-    std::vector<Producto*> listaProductos;
-    int cantidadTotal;
+    std::string archivoProductos;
+    std::vector<Producto> productos;
 
 public:
-    Inventario();
+    Inventario(const std::string& archivo = "DATA/productos.txt");
 
-    void agregarProducto(Producto* p);
-    void DescontarProducto(Producto* p);
-    void eliminarProducto(int idProducto);
+    void agregarProducto(const Producto& p);
+    void eliminarProducto(int idProducto);  // ← Asegúrate de que esté declarada
     Producto* buscarProducto(int idProducto);
     void mostrarInventario() const;
-
     int getCantidadTotal() const;
+
+    // Métodos para manejo de archivos
+    void guardarProductos() const;
+    void cargarProductos();
 };
 
 #endif

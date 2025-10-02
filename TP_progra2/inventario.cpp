@@ -1,46 +1,113 @@
 #include "Inventario.h"
 #include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <direct.h>
 
-Inventario::Inventario() : cantidadTotal(0) {}
-
-void Inventario::agregarProducto(Producto* p) {
-    listaProductos.push_back(p);
-    cantidadTotal++;
+// Función para crear carpeta si no existe
+inline void crearCarpetaSiNoExiste(const std::string& carpeta) {
+    _mkdir(carpeta.c_str());
 }
 
-void Inventario::DescontarProducto(Producto* p) {
-    listaProductos.push_back(p);
-    cantidadTotal--;
+Inventario::Inventario(const std::string& archivo) : archivoProductos(archivo) {
+    // Crear carpeta DATA si no existe
+//    size_t pos = archivo.find_last_of("/\\");
+//    if (pos != std::string::npos) {
+//        std::string carpeta = archivo.substr(0, pos);
+//        crearCarpetaSiNoExiste(carpeta);
+//        std::cout << "DEBUG: Carpeta creada/verificada: " << carpeta << std::endl;
+//    }
+
+// std::cout << "DEBUG Inventario: Ruta del archivo = " << archivoProductos << std::endl;
+
+
+    cargarProductos();
 }
 
-void Inventario::eliminarProducto(int idProducto) {
-    for (auto it = listaProductos.begin(); it != listaProductos.end(); ++it) {
-        if ((*it)->getIdProducto() == idProducto) {
-            delete *it; // liberar memoria
-            listaProductos.erase(it);
-            cantidadTotal--;
-            std::cout << "Producto eliminado.\n";
+void Inventario::agregarProducto(const Producto& p) {
+
+    for (const auto& producto : productos) {
+        if (producto.getIdProducto() == p.getIdProducto()) {
+            std::cout << "Error: Ya existe un producto con ese ID.\n";
             return;
         }
     }
-    std::cout << "No se encontro producto con ese ID.\n";
+
+    productos.push_back(p);
+    guardarProductos();
+    std::cout << "Producto agregado exitosamente!\n";
+}
+
+void Inventario::eliminarProducto(int idProducto) {
+    auto it = std::remove_if(productos.begin(), productos.end(),
+        [idProducto](const Producto& p) {
+            return p.getIdProducto() == idProducto;
+        });
+
+    if (it != productos.end()) {
+        productos.erase(it, productos.end());
+        guardarProductos();
+        std::cout << "Producto eliminado.\n";
+    } else {
+        std::cout << "No se encontro producto con ese ID.\n";
+    }
 }
 
 Producto* Inventario::buscarProducto(int idProducto) {
-    for (auto* p : listaProductos) {
-        if (p->getIdProducto() == idProducto) return p;
+    for (auto& p : productos) {
+        if (p.getIdProducto() == idProducto) {
+            return &p;
+        }
     }
     return nullptr;
 }
 
 void Inventario::mostrarInventario() const {
     std::cout << "=== INVENTARIO ===\n";
-    for (auto* p : listaProductos) {
-        if (p) p->mostrarInfo();
+    for (const auto& p : productos) {
+        p.mostrarInfo();
     }
-    std::cout << "Total productos: " << cantidadTotal << "\n";
+    std::cout << "Total productos: " << productos.size() << "\n";
 }
 
 int Inventario::getCantidadTotal() const {
-    return cantidadTotal;
+    return productos.size();
+}
+
+void Inventario::guardarProductos() const {
+
+    std::ofstream archivo(archivoProductos);
+    if (!archivo) {
+        std::cout << "ERROR: No se pudo abrir el archivo para escritura: " << archivoProductos << std::endl;
+        return;
+    }
+
+    for (const auto& producto : productos) {
+        producto.guardarEnArchivo(archivo);
+
+    }
+
+}
+
+void Inventario::cargarProductos() {
+    productos.clear();
+
+    std::ifstream archivo(archivoProductos);
+    if (!archivo) {
+        std::cout << "Archivo de productos no encontrado. Se creara uno nuevo.\n";
+        return;
+    }
+
+//    std::cout << "DEBUG: Archivo de productos abierto exitosamente" << std::endl;
+
+    Producto p;
+    int contador = 0;
+    while (p.cargarDesdeArchivo(archivo)) {
+        productos.push_back(p);
+        contador++;
+//        std::cout << "DEBUG: Producto cargado - ID: " << p.getIdProducto()
+//                  << ", Nombre: " << p.getNombre() << std::endl;
+    }
+
+    std::cout << "Cargados " << productos.size() << " productos.\n";
 }

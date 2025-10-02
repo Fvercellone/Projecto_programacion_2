@@ -3,6 +3,8 @@
 
 #include "Inventario.h"
 #include "ListaMarcas.h"
+#include "MenuMarcas.h"
+
 
 void menuProductos(Inventario& inventario, ListaMarcas& listaMarcas);
 
