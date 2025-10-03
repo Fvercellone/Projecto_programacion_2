@@ -111,3 +111,51 @@ void Inventario::cargarProductos() {
 
     std::cout << "Cargados " << productos.size() << " productos.\n";
 }
+
+
+void Inventario::editarPrecioProducto(int idProducto, float nuevoPrecio) {
+    Producto* producto = buscarProducto(idProducto);
+    if (producto) {
+        float precioViejo = producto->getPrecio();  // Guardar precio anterior
+        producto->setPrecio(nuevoPrecio);
+        guardarProductos();  // Guardar cambios en archivo
+
+        std::cout << "Precio actualizado exitosamente!\n";
+        std::cout << "Producto: " << producto->getNombre() << "\n";
+        std::cout << "Precio anterior: $" << precioViejo << "\n";
+        std::cout << "Precio nuevo: $" << nuevoPrecio << "\n";
+    } else {
+        std::cout << "Error: No se encontro producto con ID " << idProducto << ".\n";
+    }
+}
+
+
+//CONTAMOS A LOS PRODUCTOS POR MARCA PARA EVITAR DAÑOS Y/O PERDIDA DE INFORMACION
+
+int Inventario::contarProductosPorMarca(int idMarca) const {
+    int contador = 0;
+    for (const auto& producto : productos) {
+        if (producto.getIdMarca() == idMarca) {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+void Inventario::mostrarProductosPorMarca(int idMarca) const {
+    for (const auto& producto : productos) {
+        if (producto.getIdMarca() == idMarca) {
+            std::cout << "  - ";
+            producto.mostrarInfo();  // O puedes hacer un cout personalizado
+        }
+    }
+}
+
+void Inventario::reasignarProductosAMarca(int idMarcaVieja, int idMarcaNueva) {
+    for (auto& producto : productos) {
+        if (producto.getIdMarca() == idMarcaVieja) {
+            producto.setIdMarca(idMarcaNueva);
+        }
+    }
+    guardarProductos();  // Guardar los cambios
+}

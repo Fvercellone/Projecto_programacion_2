@@ -11,6 +11,7 @@ void menuInventario(Inventario& inventario) {
         cout << "3. Ingresar stock\n";
         cout << "4. Descontar stock\n";
         cout << "5. Mostrar Inventario\n";
+        cout << "6. Editar precio producto\n";
         cout << "0. Volver\n";
         cout << "Opcion: ";
         cin >> opcion;
@@ -63,6 +64,28 @@ void menuInventario(Inventario& inventario) {
             }
             case 5: {
                 inventario.mostrarInventario();
+                system("pause");
+                system("cls");
+                break;
+            }
+            case 6: {
+                int id;
+                float nuevoPrecio;
+                cout << "Ingrese ID del producto: ";
+                cin >> id;
+
+                // Mostrar información actual del producto
+                Producto* producto = inventario.buscarProducto(id);
+                if (producto) {
+                    cout << "Producto actual:\n";
+                    producto->mostrarInfo();
+                    cout << "\nIngrese nuevo precio: $";
+                    cin >> nuevoPrecio;
+
+                    inventario.editarPrecioProducto(id, nuevoPrecio);
+                } else {
+                    cout << "Producto no encontrado.\n";
+                }
                 system("pause");
                 system("cls");
                 break;

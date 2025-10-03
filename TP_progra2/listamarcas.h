@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include "Marca.h"
+#include "Inventario.h"
 
 class ListaMarcas {
 private:
@@ -15,6 +16,7 @@ public:
 
     void agregarMarca(const Marca& m);
     Marca* buscarMarca(int id);
+    void eliminarMarca(int idMarca, Inventario& inventario);
     void mostrarMarcas() const;
 
     // Métodos para archivos

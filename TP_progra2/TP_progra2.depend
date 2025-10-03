@@ -7,7 +7,7 @@
 
 1759183171 d:\github\projecto_programacion_2\tp_progra2\medio_de_pago.h
 
-1759366037 source:d:\github\projecto_programacion_2\tp_progra2\producto.cpp
+1759455750 source:d:\github\projecto_programacion_2\tp_progra2\producto.cpp
 	"Producto.h"
 	<limits>
 
@@ -136,29 +136,30 @@
 	"MenuInventario.h"
 	<iostream>
 
-1759365731 source:d:\github\projecto_programacion_2\tp_progra2\inventario.cpp
+1759458815 source:d:\github\projecto_programacion_2\tp_progra2\inventario.cpp
 	"Inventario.h"
 	<iostream>
 	<fstream>
 	<algorithm>
 	<direct.h>
 
-1759364375 d:\github\projecto_programacion_2\tp_progra2\inventario.h
+1759458455 d:\github\projecto_programacion_2\tp_progra2\inventario.h
 	<vector>
 	<string>
 	"Producto.h"
 
-1759366256 source:d:\github\projecto_programacion_2\tp_progra2\listamarcas.cpp
+1759458588 source:d:\github\projecto_programacion_2\tp_progra2\listamarcas.cpp
 	"ListaMarcas.h"
 	<iostream>
 	<fstream>
 	<algorithm>
 	<direct.h>
 
-1759364391 d:\github\projecto_programacion_2\tp_progra2\listamarcas.h
+1759454558 d:\github\projecto_programacion_2\tp_progra2\listamarcas.h
 	<vector>
 	<string>
 	"Marca.h"
+	"Inventario.h"
 
 1759187957 d:\github\projecto_programacion_2\tp_progra2\menuprincipal.h
 	"Inventario.h"
@@ -171,14 +172,15 @@
 1759187957 d:\github\projecto_programacion_2\tp_progra2\menuinventario.h
 	"Inventario.h"
 
-1759362220 source:d:\github\projecto_programacion_2\tp_progra2\menumarcas.cpp
+1759454889 source:d:\github\projecto_programacion_2\tp_progra2\menumarcas.cpp
 	"MenuMarcas.h"
 	<iostream>
 
-1759362226 d:\github\projecto_programacion_2\tp_progra2\menumarcas.h
+1759454658 d:\github\projecto_programacion_2\tp_progra2\menumarcas.h
 	"ListaMarcas.h"
+	"Inventario.h"
 
-1759188411 source:d:\github\projecto_programacion_2\tp_progra2\menuprincipal.cpp
+1759454734 source:d:\github\projecto_programacion_2\tp_progra2\menuprincipal.cpp
 	"MenuPrincipal.h"
 	"MenuProductos.h"
 	"MenuMarcas.h"
@@ -189,7 +191,7 @@
 	"ListaMarcas.h"
 	"MenuMarcas.h"
 
-1759363882 source:d:\github\projecto_programacion_2\tp_progra2\menuproductos.cpp
+1759454752 source:d:\github\projecto_programacion_2\tp_progra2\menuproductos.cpp
 	"MenuProductos.h"
 	"MenuInventario.h"
 	<iostream>

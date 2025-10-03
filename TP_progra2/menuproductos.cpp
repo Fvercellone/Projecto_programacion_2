@@ -46,7 +46,7 @@ void menuProductos(Inventario& inventario, ListaMarcas& listaMarcas) {
                 system("cls");
                 break;
             case 3:
-                menuMarcas(listaMarcas);
+                menuMarcas(listaMarcas, inventario);
                 system("cls");
                 break;
             case 0: break;

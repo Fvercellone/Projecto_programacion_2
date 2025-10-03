@@ -20,7 +20,7 @@ void menuPrincipal(Inventario& inventario, ListaMarcas& listaMarcas) {
 
         switch(opcion) {
             case 1: menuProductos(inventario, listaMarcas); system("cls"); ; break;
-            case 2: menuMarcas(listaMarcas); system("cls"); system("cls");  break;
+            case 2:  menuMarcas(listaMarcas, inventario); system("cls"); system("cls");  break;
             case 3: cout << "Modulo Ventas pendiente.\n"; system("cls");  break;
             case 4: cout << "Modulo Facturas pendiente.\n"; system("cls");  break;
             case 5: cout << "Modulo Recibos pendiente.\n"; system("cls");  break;

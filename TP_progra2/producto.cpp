@@ -21,11 +21,12 @@ void Producto::setIdMarca(int idM) { idMarca = idM; }
 
 // Métodos
 void Producto::mostrarInfo() const {
-    std::cout << "Producto[" << idProducto << "] " << nombre
+    std::cout << "Producto[" << idProducto << "] "
+              << " | Nombre: " << nombre
+              << " | Desc: " << descripcion
               << " | $" << precio
               << " | Stock: " << stock
-              << " | Marca ID: " << idMarca
-              << " | Desc: " << descripcion << "\n";
+              << " | Marca ID: " << idMarca << "\n";
 }
 
 void Producto::agregarStock(int cantidad) { stock += cantidad;}
