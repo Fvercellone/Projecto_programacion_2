@@ -75,3 +75,9 @@ bool Producto::cargarDesdeArchivo(std::ifstream& archivo) {
 
     return true;
 }
+
+
+// Setteamos id
+void Producto::setIdProducto(int id) {
+    idProducto = id;
+}

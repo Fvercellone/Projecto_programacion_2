@@ -3,13 +3,18 @@
 #include <fstream>
 #include <algorithm>
 #include <direct.h>
+#include "ListaMarcas.h"
+
+
+// Constante para el primer ID
+const int PRIMER_ID = 10001;
 
 // Función para crear carpeta si no existe
 inline void crearCarpetaSiNoExiste(const std::string& carpeta) {
     _mkdir(carpeta.c_str());
 }
 
-Inventario::Inventario(const std::string& archivo) : archivoProductos(archivo) {
+Inventario::Inventario(const std::string& archivo) : archivoProductos(archivo), ultimoID(PRIMER_ID - 1) {
     // Crear carpeta DATA si no existe
 //    size_t pos = archivo.find_last_of("/\\");
 //    if (pos != std::string::npos) {
@@ -20,22 +25,21 @@ Inventario::Inventario(const std::string& archivo) : archivoProductos(archivo) {
 
 // std::cout << "DEBUG Inventario: Ruta del archivo = " << archivoProductos << std::endl;
 
-
+    cargarUltimoID();
     cargarProductos();
 }
 
 void Inventario::agregarProducto(const Producto& p) {
+    // Generar nuevo ID automáticamente
+    int nuevoID = generarNuevoID();
 
-    for (const auto& producto : productos) {
-        if (producto.getIdProducto() == p.getIdProducto()) {
-            std::cout << "Error: Ya existe un producto con ese ID.\n";
-            return;
-        }
-    }
+    // Crear copia del producto con el nuevo ID
+    Producto productoCopia = p;
+    productoCopia.setIdProducto(nuevoID);  // Setteamos el ID nuevo al Producto
 
-    productos.push_back(p);
+    productos.push_back(productoCopia);
     guardarProductos();
-    std::cout << "Producto agregado exitosamente!\n";
+    std::cout << "Producto agregado exitosamente! ID asignado: " << nuevoID << "\n";
 }
 
 void Inventario::eliminarProducto(int idProducto) {
@@ -74,6 +78,8 @@ int Inventario::getCantidadTotal() const {
     return productos.size();
 }
 
+
+///GUARDAMOS LOS PRODUCTOS EN EL ARCHIVO
 void Inventario::guardarProductos() const {
 
     std::ofstream archivo(archivoProductos);
@@ -89,6 +95,8 @@ void Inventario::guardarProductos() const {
 
 }
 
+
+///CARGAMOS LOS PRODUCTOS DEL ARCHIVO
 void Inventario::cargarProductos() {
     productos.clear();
 
@@ -130,7 +138,7 @@ void Inventario::editarPrecioProducto(int idProducto, float nuevoPrecio) {
 }
 
 
-//CONTAMOS A LOS PRODUCTOS POR MARCA PARA EVITAR DAÑOS Y/O PERDIDA DE INFORMACION
+///CONTAMOS A LOS PRODUCTOS POR MARCA PARA EVITAR DAÑOS Y/O PERDIDA DE INFORMACION
 
 int Inventario::contarProductosPorMarca(int idMarca) const {
     int contador = 0;
@@ -158,4 +166,55 @@ void Inventario::reasignarProductosAMarca(int idMarcaVieja, int idMarcaNueva) {
         }
     }
     guardarProductos();  // Guardar los cambios
+}
+
+void Inventario::cambiarMarcaProducto(int idProducto, int nuevaIdMarca, ListaMarcas& listaMarcas) {
+    Producto* producto = buscarProducto(idProducto);
+    if (!producto) {
+        std::cout << "Error: Producto no encontrado.\n";
+        return;
+    }
+
+    // VALIDAR que la nueva marca exista
+    if (!listaMarcas.buscarMarca(nuevaIdMarca)) {
+        std::cout << "Error: La marca ID " << nuevaIdMarca << " no existe.\n";
+        return;
+    }
+
+    int marcaVieja = producto->getIdMarca();
+    producto->setIdMarca(nuevaIdMarca);
+    guardarProductos();
+
+    std::cout << "Marca cambiada exitosamente!\n";
+    std::cout << "Producto: " << producto->getNombre() << "\n";
+    std::cout << "Marca anterior: " << marcaVieja << "\n";
+    std::cout << "Marca nueva: " << nuevaIdMarca << "\n";
+}
+
+
+
+/// Genera un nuevo ID autoincremental
+int Inventario::generarNuevoID() {
+    ultimoID++;  // Incrementa el contador
+    guardarUltimoID();  // Guarda inmediatamente
+    return ultimoID;
+}
+
+/// Carga el último ID desde archivo
+void Inventario::cargarUltimoID() {
+    std::ifstream archivo("DATA/ultimo_id.txt");
+    if (archivo) {
+        archivo >> ultimoID;
+    } else {
+        // Si no existe, empezar desde PRIMER_ID - 1
+        ultimoID = PRIMER_ID - 1;
+    }
+}
+
+/// Guarda el último ID en archivo
+void Inventario::guardarUltimoID() const {
+    std::ofstream archivo("DATA/ultimo_id.txt");
+    if (archivo) {
+        archivo << ultimoID;
+    }
 }

@@ -10,6 +10,7 @@ class ListaMarcas {
 private:
     std::vector<Marca> marcas;
     std::string archivoMarcas;
+    int ultimoID;
 
 public:
     ListaMarcas(const std::string& archivo = "DATA/marcas.txt");
@@ -22,6 +23,13 @@ public:
     // Métodos para archivos
     void guardarMarcas() const;
     void cargarMarcas();
+
+private:
+    int generarNuevoID();
+    void cargarUltimoID();
+    void guardarUltimoID() const;
+
+
 };
 
 #endif

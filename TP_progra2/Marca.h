@@ -19,6 +19,7 @@ public:
     std::string getNombre() const;
 
     // Setters
+    void setIdMarca(int id);
     void setNombre(const std::string& n);
 
     // Mostrar

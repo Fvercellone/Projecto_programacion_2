@@ -27,6 +27,7 @@ public:
     int getIdMarca() const;
 
     // Setters
+    void setIdProducto(int id);
     void setNombre(const std::string& n);
     void setDescripcion(const std::string& d);
     void setPrecio(float p);

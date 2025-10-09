@@ -27,3 +27,7 @@ bool Marca::cargarDesdeArchivo(std::ifstream& archivo) {
 
     return true;
 }
+
+void Marca::setIdMarca(int id) {
+    idMarca = id;
+}

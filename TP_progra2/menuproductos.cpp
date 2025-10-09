@@ -18,22 +18,25 @@ void menuProductos(Inventario& inventario, ListaMarcas& listaMarcas) {
 
         switch(opcion) {
             case 1: {
-                int idP, stock, idM;
+                int stock, idM;
                 string nombre, desc;
                 float precio;
 
-                cout << "Ingrese ID Producto: "; cin >> idP;
                 cout << "Ingrese nombre: "; cin.ignore(); getline(cin, nombre);
                 cout << "Ingrese descripcion: "; getline(cin, desc);
                 cout << "Ingrese precio: "; cin >> precio;
                 cout << "Ingrese stock: "; cin >> stock;
+
+                    //AGREGAR: Mostrar marcas disponibles
+                cout <<""<<endl;
+                listaMarcas.mostrarMarcas();
+                cout << "--------------\n"<<endl;
+
                 cout << "Ingrese ID de la marca: "; cin >> idM;
 
                 if (listaMarcas.buscarMarca(idM)) {
-                    Producto nuevoProducto(idP, nombre, desc, precio, stock, idM);
+                    Producto nuevoProducto(0, nombre, desc, precio, stock, idM);
                     inventario.agregarProducto(nuevoProducto);
-                    // ↑ ESTA función debería llamar a guardarProductos() automáticamente
-                    cout << "Producto creado exitosamente!\n";
                 } else {
                     cout << "ERROR: Marca inexistente.\n";
                 }
@@ -41,14 +44,17 @@ void menuProductos(Inventario& inventario, ListaMarcas& listaMarcas) {
                 system("cls");
                 break;
             }
+
             case 2:
-                menuInventario(inventario);
+                menuInventario(inventario, listaMarcas);  // ← AGREGAR listaMarcas
                 system("cls");
                 break;
+
             case 3:
                 menuMarcas(listaMarcas, inventario);
                 system("cls");
                 break;
+
             case 0: break;
             default: cout << "Opcion invalida.\n";
         }

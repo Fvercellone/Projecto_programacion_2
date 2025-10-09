@@ -1,8 +1,9 @@
 #include "MenuInventario.h"
 #include <iostream>
+#include "ListaMarcas.h"
 using namespace std;
 
-void menuInventario(Inventario& inventario) {
+void menuInventario(Inventario& inventario, ListaMarcas& listaMarcas) {
     int opcion;
     do {system("cls");
         cout << "\n=== MENU INVENTARIO ===\n";
@@ -12,6 +13,7 @@ void menuInventario(Inventario& inventario) {
         cout << "4. Descontar stock\n";
         cout << "5. Mostrar Inventario\n";
         cout << "6. Editar precio producto\n";
+        cout << "7. Editar marca producto\n";
         cout << "0. Volver\n";
         cout << "Opcion: ";
         cin >> opcion;
@@ -32,6 +34,7 @@ void menuInventario(Inventario& inventario) {
                 int id;
                 cout << "Ingrese ID producto: "; cin >> id;
                 inventario.eliminarProducto(id);
+                system("pause");
                 system("cls");
                 break;
             }
@@ -74,7 +77,7 @@ void menuInventario(Inventario& inventario) {
                 cout << "Ingrese ID del producto: ";
                 cin >> id;
 
-                // Mostrar informaci�n actual del producto
+                // Mostrar información actual del producto
                 Producto* producto = inventario.buscarProducto(id);
                 if (producto) {
                     cout << "Producto actual:\n";
@@ -90,6 +93,33 @@ void menuInventario(Inventario& inventario) {
                 system("cls");
                 break;
             }
+
+            case 7: {  // ← NUEVO CASE
+                    int id, nuevaMarca;
+                    cout << "Ingrese ID del producto: ";
+                    cin >> id;
+
+                    Producto* producto = inventario.buscarProducto(id);
+                    if (producto) {
+                        cout << "Producto actual:\n";
+                        producto->mostrarInfo();
+
+                        //OPCIONAL: Mostrar marcas disponibles
+                        cout << "\nMarcas disponibles:\n";
+                        listaMarcas.mostrarMarcas();  // Necesitas pasar listaMarcas al menú
+
+                        cout << "\nIngrese nueva ID de marca: ";
+                        cin >> nuevaMarca;
+
+                        inventario.cambiarMarcaProducto(id, nuevaMarca, listaMarcas);
+                    } else {
+                        cout << "Producto no encontrado.\n";
+                    }
+                    system("pause");
+                    system("cls");
+                    break;
+                }
+
             case 0: break;
             default: cout << "Opcion invalida.\n";
         }

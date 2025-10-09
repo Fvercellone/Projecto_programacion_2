@@ -4,43 +4,44 @@
 #include <algorithm>
 #include <direct.h>
 
+const int PRIMER_ID_MARCA = 20001;
+
 inline void crearCarpetaSiNoExiste(const std::string& carpeta) {
     _mkdir(carpeta.c_str());
 }
 
-ListaMarcas::ListaMarcas(const std::string& archivo) : archivoMarcas(archivo) {
+ListaMarcas::ListaMarcas(const std::string& archivo) : archivoMarcas(archivo), ultimoID(PRIMER_ID_MARCA - 1) {
+    // PRIMERO cargar el último ID
+    cargarUltimoID();
+
+    // LUEGO cargar las marcas
     cargarMarcas();
-            size_t pos = archivo.find_last_of("/\\");
+
+    size_t pos = archivo.find_last_of("/\\");
     if (pos != std::string::npos) {
         std::string carpeta = archivo.substr(0, pos);
         crearCarpetaSiNoExiste(carpeta);
-//        std::cout << "DEBUG: Carpeta creada/verificada: " << carpeta << std::endl;
     }
-//    std::cout << "DEBUG ListaMarcas: Ruta del archivo = " << archivoMarcas << std::endl;
 
-    if (!buscarMarca(0)) {  // ID 0 para "SIN MARCA"
+    if (!buscarMarca(0)) {
         Marca marcaSinMarca(0, "SIN MARCA");
         marcas.push_back(marcaSinMarca);
         guardarMarcas();
         std::cout << "Marca 'SIN MARCA' creada automaticamente.\n";
     }
-
 }
 
 void ListaMarcas::agregarMarca(const Marca& m) {
+    // Generar nuevo ID automáticamente
+    int nuevoID = generarNuevoID();
 
+    // Crear copia de la marca con el nuevo ID
+    Marca marcaCopia = m;
+    marcaCopia.setIdMarca(nuevoID);  // setteamos el ID para cada nueva marca
 
-    // Verificar si la marca ya existe
-    for (const auto& marca : marcas) {
-        if (marca.getIdMarca() == m.getIdMarca()) {
-            std::cout << "Error: Ya existe una marca con ese ID.\n";
-            return;
-        }
-    }
-
-    marcas.push_back(m);
+    marcas.push_back(marcaCopia);
     guardarMarcas();
-    std::cout << "Marca agregada exitosamente!\n";
+    std::cout << "Marca agregada exitosamente! ID asignado: " << nuevoID << "\n";
 }
 
 Marca* ListaMarcas::buscarMarca(int id) {
@@ -59,7 +60,7 @@ void ListaMarcas::mostrarMarcas() const {
     }
 }
 
-// M�todos para archivos
+// Métodos para archivos
 void ListaMarcas::guardarMarcas() const {
     std::ofstream archivo(archivoMarcas);
     if (!archivo) {
@@ -109,7 +110,7 @@ void ListaMarcas::eliminarMarca(int idMarca, Inventario& inventario) {
         std::cout << "\nADVERTENCIA\n";
         std::cout << "Esta marca tiene " << productosRelacionados << " productos relacionados.\n";
 
-        // MOSTRAR los productos espec�ficos
+        // MOSTRAR los productos específicos
 
         std::cout << "\n";
         inventario.mostrarProductosPorMarca(idMarca);
@@ -131,11 +132,41 @@ void ListaMarcas::eliminarMarca(int idMarca, Inventario& inventario) {
         inventario.reasignarProductosAMarca(idMarca, 0);
     }
 
-    // Proceder con eliminaci�n de marca
+    // Proceder con eliminación de marca
     auto it = std::remove_if(marcas.begin(), marcas.end(),
         [idMarca](const Marca& m) { return m.getIdMarca() == idMarca; });
 
     marcas.erase(it, marcas.end());
     guardarMarcas();
     std::cout << "Marca eliminada. Productos reasignados a 'SIN MARCA'.\n";
+}
+
+
+/// Genera un nuevo ID autoincremental para marcas
+int ListaMarcas::generarNuevoID() {
+    ultimoID++;  // Incrementa el contador
+    guardarUltimoID();  // Guarda inmediatamente
+    return ultimoID;
+}
+
+void ListaMarcas::cargarUltimoID() {
+    std::ifstream archivo("DATA/ultimo_id_marcas.txt");
+    if (archivo) {
+        archivo >> ultimoID;
+        // VERIFICAR que no sea un valor corrupto
+        if (ultimoID < PRIMER_ID_MARCA) {
+            ultimoID = PRIMER_ID_MARCA - 1;
+        }
+    } else {
+        // Si no existe el archivo
+        ultimoID = PRIMER_ID_MARCA - 1;
+    }
+}
+
+/// Guarda el último ID en archivo
+void ListaMarcas::guardarUltimoID() const {
+    std::ofstream archivo("DATA/ultimo_id_marcas.txt");  // ← ARCHIVO DIFERENTE
+    if (archivo) {
+        archivo << ultimoID;
+    }
 }

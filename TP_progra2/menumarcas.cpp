@@ -18,27 +18,27 @@ void menuMarcas(ListaMarcas& listaMarcas, Inventario& inventario) {
 
         switch(opcion) {
             case 1: {
-                int id;
                 string nombre;
 
-                cout << "Ingrese ID de la marca: "; cin >> id;
                 cout << "Ingrese nombre de la marca: ";
                 cin.ignore();
                 getline(cin, nombre);
 
-                Marca nuevaMarca(id, nombre);
+                Marca nuevaMarca(0, nombre);  // ID temporal (0)
                 listaMarcas.agregarMarca(nuevaMarca);
 
                 system("pause");
                 system("cls");
                 break;
             }
+
             case 2: {
                 listaMarcas.mostrarMarcas();
                 system("pause");
                 system("cls");
                 break;
             }
+
             case 3: {
                 int id;
                 cout << "Ingrese ID de la marca a eliminar: ";
@@ -48,6 +48,7 @@ void menuMarcas(ListaMarcas& listaMarcas, Inventario& inventario) {
                 system("cls");
                 break;
             }
+
             case 0: break;
             default: cout << "Opcion invalida.\n";
         }
