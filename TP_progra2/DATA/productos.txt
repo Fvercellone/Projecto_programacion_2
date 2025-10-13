@@ -1,1 +1,2 @@
-10001 coca cola|refresco|50 500 20001
+10001 coca-cola|Refresco|50 500 20001
+10002 Oreos Block|Galletitas|40 10 20003

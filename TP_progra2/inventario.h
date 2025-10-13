@@ -22,6 +22,8 @@ public:
     void mostrarInventario() const;
     int getCantidadTotal() const;
     void editarPrecioProducto(int idProducto, float nuevoPrecio);
+    void editarNombreProducto(int idProducto, const std::string& nuevoNombre);
+    void editarDescripcionProducto(int idProducto, const std::string& nuevaDescripcion);
 
     //MARCA
     int contarProductosPorMarca(int idMarca) const;

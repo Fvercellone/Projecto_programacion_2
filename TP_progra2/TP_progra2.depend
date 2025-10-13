@@ -136,7 +136,7 @@
 	"MenuInventario.h"
 	<iostream>
 
-1759984616 source:d:\github\projecto_programacion_2\tp_progra2\inventario.cpp
+1760392665 source:d:\github\projecto_programacion_2\tp_progra2\inventario.cpp
 	"Inventario.h"
 	<iostream>
 	<fstream>
@@ -144,7 +144,7 @@
 	<direct.h>
 	"ListaMarcas.h"
 
-1759984496 d:\github\projecto_programacion_2\tp_progra2\inventario.h
+1760392580 d:\github\projecto_programacion_2\tp_progra2\inventario.h
 	<vector>
 	<string>
 	"Producto.h"
@@ -194,7 +194,7 @@
 	"ListaMarcas.h"
 	"MenuMarcas.h"
 
-1759981455 source:d:\github\projecto_programacion_2\tp_progra2\menuproductos.cpp
+1759985088 source:d:\github\projecto_programacion_2\tp_progra2\menuproductos.cpp
 	"MenuProductos.h"
 	"MenuInventario.h"
 	<iostream>

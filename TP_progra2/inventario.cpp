@@ -218,3 +218,39 @@ void Inventario::guardarUltimoID() const {
         archivo << ultimoID;
     }
 }
+
+
+///Modificar Nombre de un Producto
+void Inventario::editarNombreProducto(int idProducto, const std::string& nuevoNombre) {
+    Producto* producto = buscarProducto(idProducto);
+    if (producto) {
+        std::string nombreViejo = producto->getNombre();
+        producto->setNombre(nuevoNombre);
+        guardarProductos();
+
+        std::cout << "Nombre actualizado exitosamente!\n";
+        std::cout << "Producto ID: " << idProducto << "\n";
+        std::cout << "Nombre anterior: " << nombreViejo << "\n";
+        std::cout << "Nombre nuevo: " << nuevoNombre << "\n";
+    } else {
+        std::cout << "Error: Producto no encontrado.\n";
+    }
+}
+
+
+///Modificar Descripcion de un Producto
+void Inventario::editarDescripcionProducto(int idProducto, const std::string& nuevaDescripcion) {
+    Producto* producto = buscarProducto(idProducto);
+    if (producto) {
+        std::string descripcionVieja = producto->getDescripcion();
+        producto->setDescripcion(nuevaDescripcion);
+        guardarProductos();
+
+        std::cout << "Descripcion actualizada exitosamente!\n";
+        std::cout << "Producto: " << producto->getNombre() << "\n";
+        std::cout << "Descripcion anterior: " << descripcionVieja << "\n";
+        std::cout << "Descripcion nueva: " << nuevaDescripcion << "\n";
+    } else {
+        std::cout << "Error: Producto no encontrado.\n";
+    }
+}

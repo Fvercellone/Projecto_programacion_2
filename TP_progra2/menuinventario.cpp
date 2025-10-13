@@ -12,8 +12,10 @@ void menuInventario(Inventario& inventario, ListaMarcas& listaMarcas) {
         cout << "3. Ingresar stock\n";
         cout << "4. Descontar stock\n";
         cout << "5. Mostrar Inventario\n";
-        cout << "6. Editar precio producto\n";
-        cout << "7. Editar marca producto\n";
+        cout << "6. Editar Precio producto\n";
+        cout << "7. Editar Marca producto\n";
+        cout << "8. Editar Nombre producto\n";
+        cout << "9. Editar Descripcion producto\n";
         cout << "0. Volver\n";
         cout << "Opcion: ";
         cin >> opcion;
@@ -94,7 +96,7 @@ void menuInventario(Inventario& inventario, ListaMarcas& listaMarcas) {
                 break;
             }
 
-            case 7: {  // ← NUEVO CASE
+            case 7: {
                     int id, nuevaMarca;
                     cout << "Ingrese ID del producto: ";
                     cin >> id;
@@ -119,6 +121,52 @@ void menuInventario(Inventario& inventario, ListaMarcas& listaMarcas) {
                     system("cls");
                     break;
                 }
+
+                        case 8: {
+                int id;
+                string nuevoNombre;
+                cout << "Ingrese ID del producto: ";
+                cin >> id;
+
+                Producto* producto = inventario.buscarProducto(id);
+                if (producto) {
+                    cout << "Producto actual:\n";
+                    producto->mostrarInfo();
+                    cout << "\nIngrese nuevo nombre: ";
+                    cin.ignore();
+                    getline(cin, nuevoNombre);
+
+                    inventario.editarNombreProducto(id, nuevoNombre);
+                } else {
+                    cout << "Producto no encontrado.\n";
+                }
+                system("pause");
+                system("cls");
+                break;
+            }
+
+            case 9: {
+                int id;
+                string nuevaDesc;
+                cout << "Ingrese ID del producto: ";
+                cin >> id;
+
+                Producto* producto = inventario.buscarProducto(id);
+                if (producto) {
+                    cout << "Producto actual:\n";
+                    producto->mostrarInfo();
+                    cout << "\nIngrese nueva descripción: ";
+                    cin.ignore();
+                    getline(cin, nuevaDesc);
+
+                    inventario.editarDescripcionProducto(id, nuevaDesc);
+                } else {
+                    cout << "Producto no encontrado.\n";
+                }
+                system("pause");
+                system("cls");
+                break;
+            }
 
             case 0: break;
             default: cout << "Opcion invalida.\n";
