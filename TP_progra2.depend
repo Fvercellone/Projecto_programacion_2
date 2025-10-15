@@ -1,0 +1,305 @@
+# depslib dependency file v1.0
+1759189697 source:d:\github\projecto_programacion_2\tp_progra2\crear_archivos.cpp
+
+1759183171 d:\github\projecto_programacion_2\tp_progra2\crear_archivos.h
+
+1759187957 source:d:\github\projecto_programacion_2\tp_progra2\medio_de_pago.cpp
+
+1759183171 d:\github\projecto_programacion_2\tp_progra2\medio_de_pago.h
+
+1759981580 source:d:\github\projecto_programacion_2\tp_progra2\producto.cpp
+	"Producto.h"
+	<limits>
+
+1759981285 d:\github\projecto_programacion_2\tp_progra2\producto.h
+	<string>
+	<iostream>
+	<fstream>
+
+1759982454 source:d:\github\projecto_programacion_2\tp_progra2\marca.cpp
+	"Marca.h"
+
+1759982435 d:\github\projecto_programacion_2\tp_progra2\marca.h
+	<string>
+	<iostream>
+	<fstream>
+
+1759365554 source:d:\github\projecto_programacion_2\tp_progra2\main.cpp
+	"MenuPrincipal.h"
+
+1759184837 source:c:\desarrollo\tp_progra2\crear_archivos.cpp
+
+1759184837 source:c:\desarrollo\tp_progra2\marca.cpp
+	"Marca.h"
+
+1759184837 c:\desarrollo\tp_progra2\marca.h
+	<string>
+	<iostream>
+
+1759184837 source:c:\desarrollo\tp_progra2\medio_de_pago.cpp
+
+1759184837 source:c:\desarrollo\tp_progra2\producto.cpp
+	"Producto.h"
+
+1759184837 c:\desarrollo\tp_progra2\producto.h
+	<string>
+	<iostream>
+
+1759185305 source:c:\desarrollo\tp_progra2\inventario.cpp
+	"Inventario.h"
+	<iostream>
+
+1759185300 c:\desarrollo\tp_progra2\inventario.h
+	<vector>
+	"Producto.h"
+
+1759185362 source:c:\desarrollo\tp_progra2\listamarcas.cpp
+	"ListaMarcas.h"
+	<iostream>
+
+1759185354 c:\desarrollo\tp_progra2\listamarcas.h
+	<vector>
+	"Marca.h"
+
+1759185726 source:c:\desarrollo\tp_progra2\main.cpp
+	<iostream>
+	"Inventario.h"
+	"ListaMarcas.h"
+
+1759187957 source:d:\github\projecto_programacion_2\tp_progra2\tp_progra2\crear_archivos.cpp
+
+1759187957 source:d:\github\projecto_programacion_2\tp_progra2\tp_progra2\listamarcas.cpp
+	"ListaMarcas.h"
+	<iostream>
+
+1759187957 d:\github\projecto_programacion_2\tp_progra2\tp_progra2\listamarcas.h
+	<vector>
+	"Marca.h"
+
+1759187957 d:\github\projecto_programacion_2\tp_progra2\tp_progra2\marca.h
+	<string>
+	<iostream>
+
+1759188281 source:d:\github\projecto_programacion_2\tp_progra2\tp_progra2\main.cpp
+	"MenuPrincipal.h"
+
+1759187957 d:\github\projecto_programacion_2\tp_progra2\tp_progra2\menuprincipal.h
+	"Inventario.h"
+	"ListaMarcas.h"
+
+1759188152 d:\github\projecto_programacion_2\tp_progra2\tp_progra2\inventario.h
+	<vector>
+	"Producto.h"
+
+1759189309 d:\github\projecto_programacion_2\tp_progra2\tp_progra2\producto.h
+	<string>
+	<iostream>
+
+1759187957 source:d:\github\projecto_programacion_2\tp_progra2\tp_progra2\marca.cpp
+	"Marca.h"
+
+1759187957 source:d:\github\projecto_programacion_2\tp_progra2\tp_progra2\medio_de_pago.cpp
+
+1759188684 source:d:\github\projecto_programacion_2\tp_progra2\tp_progra2\menumarcas.cpp
+	"MenuMarcas.h"
+	<iostream>
+
+1759187957 d:\github\projecto_programacion_2\tp_progra2\tp_progra2\menumarcas.h
+	"ListaMarcas.h"
+
+1759188411 source:d:\github\projecto_programacion_2\tp_progra2\tp_progra2\menuprincipal.cpp
+	"MenuPrincipal.h"
+	"MenuProductos.h"
+	"MenuMarcas.h"
+	<iostream>
+
+1759187957 d:\github\projecto_programacion_2\tp_progra2\tp_progra2\menuproductos.h
+	"Inventario.h"
+	"ListaMarcas.h"
+
+1759188775 source:d:\github\projecto_programacion_2\tp_progra2\tp_progra2\menuproductos.cpp
+	"MenuProductos.h"
+	"MenuInventario.h"
+	<iostream>
+
+1759187957 d:\github\projecto_programacion_2\tp_progra2\tp_progra2\menuinventario.h
+	"Inventario.h"
+
+1759189329 source:d:\github\projecto_programacion_2\tp_progra2\tp_progra2\producto.cpp
+	"Producto.h"
+
+1759188162 source:d:\github\projecto_programacion_2\tp_progra2\tp_progra2\inventario.cpp
+	"Inventario.h"
+	<iostream>
+
+1759189137 source:d:\github\projecto_programacion_2\tp_progra2\tp_progra2\menuinventario.cpp
+	"MenuInventario.h"
+	<iostream>
+
+1760392665 source:d:\github\projecto_programacion_2\tp_progra2\inventario.cpp
+	"Inventario.h"
+	<iostream>
+	<fstream>
+	<algorithm>
+	<direct.h>
+	"ListaMarcas.h"
+
+1760392580 d:\github\projecto_programacion_2\tp_progra2\inventario.h
+	<vector>
+	<string>
+	"Producto.h"
+
+1759983174 source:d:\github\projecto_programacion_2\tp_progra2\listamarcas.cpp
+	"ListaMarcas.h"
+	<iostream>
+	<fstream>
+	<algorithm>
+	<direct.h>
+
+1759982041 d:\github\projecto_programacion_2\tp_progra2\listamarcas.h
+	<vector>
+	<string>
+	"Marca.h"
+	"Inventario.h"
+
+1759187957 d:\github\projecto_programacion_2\tp_progra2\menuprincipal.h
+	"Inventario.h"
+	"ListaMarcas.h"
+
+1759984575 source:d:\github\projecto_programacion_2\tp_progra2\menuinventario.cpp
+	"MenuInventario.h"
+	<iostream>
+	"ListaMarcas.h"
+
+1759984698 d:\github\projecto_programacion_2\tp_progra2\menuinventario.h
+	"Inventario.h"
+	"ListaMarcas.h"
+
+1759982538 source:d:\github\projecto_programacion_2\tp_progra2\menumarcas.cpp
+	"MenuMarcas.h"
+	<iostream>
+
+1759454658 d:\github\projecto_programacion_2\tp_progra2\menumarcas.h
+	"ListaMarcas.h"
+	"Inventario.h"
+
+1759454734 source:d:\github\projecto_programacion_2\tp_progra2\menuprincipal.cpp
+	"MenuPrincipal.h"
+	"MenuProductos.h"
+	"MenuMarcas.h"
+	<iostream>
+
+1759362313 d:\github\projecto_programacion_2\tp_progra2\menuproductos.h
+	"Inventario.h"
+	"ListaMarcas.h"
+	"MenuMarcas.h"
+
+1759985088 source:d:\github\projecto_programacion_2\tp_progra2\menuproductos.cpp
+	"MenuProductos.h"
+	"MenuInventario.h"
+	<iostream>
+
+1760393491 source:c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\crear_archivos.cpp
+
+1760393491 source:c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\inventario.cpp
+	"Inventario.h"
+	<iostream>
+	<fstream>
+	<algorithm>
+	<direct.h>
+	"ListaMarcas.h"
+
+1760393491 c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\inventario.h
+	<vector>
+	<string>
+	"Producto.h"
+
+1760393491 c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\producto.h
+	<string>
+	<iostream>
+	<fstream>
+
+1760531517 c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\listamarcas.h
+	<vector>
+	<string>
+	"Marca.h"
+	"Inventario.h"
+
+1760393491 c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\marca.h
+	<string>
+	<iostream>
+	<fstream>
+
+1760393491 source:c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\listamarcas.cpp
+	"ListaMarcas.h"
+	<iostream>
+	<fstream>
+	<algorithm>
+	<direct.h>
+
+1760393491 source:c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\main.cpp
+	"MenuPrincipal.h"
+
+1760393491 c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\menuprincipal.h
+	"Inventario.h"
+	"ListaMarcas.h"
+
+1760393491 source:c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\marca.cpp
+	"Marca.h"
+
+1760393491 source:c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\medio_de_pago.cpp
+
+1760528374 source:c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\menuinventario.cpp
+	"MenuInventario.h"
+	<iostream>
+	"ListaMarcas.h"
+
+1760393491 c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\menuinventario.h
+	"Inventario.h"
+	"ListaMarcas.h"
+
+1760393491 source:c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\menumarcas.cpp
+	"MenuMarcas.h"
+	<iostream>
+
+1760393491 c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\menumarcas.h
+	"ListaMarcas.h"
+	"Inventario.h"
+
+1760393491 source:c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\menuprincipal.cpp
+	"MenuPrincipal.h"
+	"MenuProductos.h"
+	"MenuMarcas.h"
+	<iostream>
+
+1760393491 c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\menuproductos.h
+	"Inventario.h"
+	"ListaMarcas.h"
+	"MenuMarcas.h"
+
+1760393491 source:c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\producto.cpp
+	"Producto.h"
+	<limits>
+
+1760528096 source:c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\menuediciones.cpp
+	"menuediciones.h"
+	<iostream>
+
+1760528142 c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\menuediciones.h
+	"Inventario.h"
+	"ListaMarcas.h"
+
+1760531811 source:c:\users\franc\downloads\projecto_programacion_2-main\projecto_programacion_2-main\tp_progra2\menuproductos.cpp
+	"MenuInventario.h"
+	"MenuEdiciones.h"
+	<iostream>
+	<conio.h>
+	<algorithm>
+	"MenuProductos.h"
+	"MenuInventario.h"
+	"MenuEdiciones.h"
+	<iostream>
+	<conio.h>
+	<algorithm>
+	<windows.h>
+
