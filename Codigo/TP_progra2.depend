@@ -303,3 +303,118 @@
 	<algorithm>
 	<windows.h>
 
+1760563860 source:d:\github\projecto_programacion_2\codigo\crear_archivos.cpp
+
+1760563860 source:d:\github\projecto_programacion_2\codigo\inventario.cpp
+	"Inventario.h"
+	<iostream>
+	<fstream>
+	<algorithm>
+	<direct.h>
+	"ListaMarcas.h"
+
+1760563860 d:\github\projecto_programacion_2\codigo\inventario.h
+	<vector>
+	<string>
+	"Producto.h"
+
+1760563860 d:\github\projecto_programacion_2\codigo\producto.h
+	<string>
+	<iostream>
+	<fstream>
+
+1760563860 d:\github\projecto_programacion_2\codigo\listamarcas.h
+	<vector>
+	<string>
+	"Marca.h"
+	"Inventario.h"
+
+1760563860 d:\github\projecto_programacion_2\codigo\marca.h
+	<string>
+	<iostream>
+	<fstream>
+
+1760563860 source:d:\github\projecto_programacion_2\codigo\listamarcas.cpp
+	"ListaMarcas.h"
+	<iostream>
+	<fstream>
+	<algorithm>
+	<direct.h>
+
+1760563860 source:d:\github\projecto_programacion_2\codigo\main.cpp
+	"MenuPrincipal.h"
+
+1760563860 d:\github\projecto_programacion_2\codigo\menuprincipal.h
+	"Inventario.h"
+	"ListaMarcas.h"
+
+1760563860 source:d:\github\projecto_programacion_2\codigo\marca.cpp
+	"Marca.h"
+
+1760563860 source:d:\github\projecto_programacion_2\codigo\medio_de_pago.cpp
+
+1760563860 source:d:\github\projecto_programacion_2\codigo\menuinventario.cpp
+	"MenuInventario.h"
+	<iostream>
+	"ListaMarcas.h"
+
+1760563860 d:\github\projecto_programacion_2\codigo\menuinventario.h
+	"Inventario.h"
+	"ListaMarcas.h"
+
+1760563860 source:d:\github\projecto_programacion_2\codigo\menumarcas.cpp
+	"MenuMarcas.h"
+	<iostream>
+
+1760563860 d:\github\projecto_programacion_2\codigo\menumarcas.h
+	"ListaMarcas.h"
+	"Inventario.h"
+
+1760563860 source:d:\github\projecto_programacion_2\codigo\menuprincipal.cpp
+	"MenuPrincipal.h"
+	"MenuProductos.h"
+	"MenuMarcas.h"
+	<iostream>
+
+1760563860 d:\github\projecto_programacion_2\codigo\menuproductos.h
+	"Inventario.h"
+	"ListaMarcas.h"
+	"MenuMarcas.h"
+
+1760563860 source:d:\github\projecto_programacion_2\codigo\producto.cpp
+	"Producto.h"
+	<limits>
+
+1760569162 source:d:\github\projecto_programacion_2\codigo\menuediciones.cpp
+	"menuediciones.h"
+	"SeleccionFunciones.h"
+	<iostream>
+
+1760563860 d:\github\projecto_programacion_2\codigo\menuediciones.h
+	"Inventario.h"
+	"ListaMarcas.h"
+
+1760569058 source:d:\github\projecto_programacion_2\codigo\menuproductos.cpp
+	"MenuProductos.h"
+	"MenuInventario.h"
+	"MenuEdiciones.h"
+	"SeleccionFunciones.h"
+	<iostream>
+	<conio.h>
+	<algorithm>
+
+1760569401 d:\github\projecto_programacion_2\codigo\seleccionador.h
+	<iostream>
+	<vector>
+	<conio.h>
+	<windows.h>
+	<functional>
+
+1760569034 d:\github\projecto_programacion_2\codigo\seleccionfunciones.h
+	"ListaMarcas.h"
+	"Seleccionador.h"
+	<iostream>
+
+1760569180 source:d:\github\projecto_programacion_2\codigo\seleccionfunciones.cpp
+	"SeleccionFunciones.h"
+

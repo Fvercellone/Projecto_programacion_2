@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add directory="../TP_progra2" />
 					<Add directory="./" />
+					<Add directory="../Codigo" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,6 +27,7 @@
 					<Add option="-O2" />
 					<Add directory="../TP_progra2" />
 					<Add directory="./" />
+					<Add directory="../Codigo" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -38,6 +40,9 @@
 		</Compiler>
 		<Unit filename="Marca.cpp" />
 		<Unit filename="Marca.h" />
+		<Unit filename="SeleccionFunciones.cpp" />
+		<Unit filename="SeleccionFunciones.h" />
+		<Unit filename="Seleccionador.h" />
 		<Unit filename="crear_archivos.cpp" />
 		<Unit filename="crear_archivos.h" />
 		<Unit filename="inventario.cpp" />

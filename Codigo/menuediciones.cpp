@@ -1,6 +1,8 @@
 #include "menuediciones.h"
+#include "SeleccionFunciones.h"
 #include <iostream>
 using namespace std;
+
 
 void menuEdiciones(Inventario& inventario, ListaMarcas& listaMarcas) {
     int opcion;
@@ -10,9 +12,9 @@ void menuEdiciones(Inventario& inventario, ListaMarcas& listaMarcas) {
         cout << "1. Editar precio producto\n";
         cout << "2. Editar marca producto\n";
         cout << "3. Editar nombre producto\n";
-        cout << "4. Editar descripción producto\n";
+        cout << "4. Editar descripcion producto\n";
         cout << "0. Volver\n";
-        cout << "Opción: ";
+        cout << "Opcion: ";
         cin >> opcion;
         system("cls");
 
@@ -36,7 +38,7 @@ void menuEdiciones(Inventario& inventario, ListaMarcas& listaMarcas) {
             }
 
             case 2: {
-                int id, nuevaMarca;
+                int id;
                 cout << "Ingrese ID del producto: ";
                 cin >> id;
 
@@ -44,12 +46,17 @@ void menuEdiciones(Inventario& inventario, ListaMarcas& listaMarcas) {
                 if (producto) {
                     cout << "Producto actual:\n";
                     producto->mostrarInfo();
-                    cout << "\nMarcas disponibles:\n";
-                    listaMarcas.mostrarMarcas();
-                    cout << "\nIngrese nueva ID de marca: ";
-                    cin >> nuevaMarca;
+
+                    int nuevaMarca = seleccionarMarca(listaMarcas);
+                    if (nuevaMarca == -1) {
+                        cout << "Operación cancelada.\n";
+                        system("pause");
+                        break;
+                    }
                     inventario.cambiarMarcaProducto(id, nuevaMarca, listaMarcas);
-                } else cout << "Producto no encontrado.\n";
+                }
+                else cout << "Producto no encontrado.\n";
+
                 system("pause");
                 break;
             }
