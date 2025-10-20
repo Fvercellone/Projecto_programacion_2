@@ -18,8 +18,7 @@ void menuProductos(Inventario& inventario, ListaMarcas& listaMarcas) {
         cout << "\n=== MENU PRODUCTOS ===\n";
         cout << "1. Crear Producto\n";
         cout << "2. Inventario\n";
-        cout << "3. Gestionar Marcas\n";
-        cout << "4. Editar producto\n";
+        cout << "3. Editar producto\n";
         cout << "0. Volver\n";
         cout << "Opcion: ";
         cin >> opcion;
@@ -44,8 +43,13 @@ void menuProductos(Inventario& inventario, ListaMarcas& listaMarcas) {
                 // --- NUEVO SISTEMA DE SELECCIÓN DE MARCA ---
                 int idM = seleccionarMarca(listaMarcas);
 
-
-
+                if (idM != -1) {
+                    Producto nuevoProducto(0, nombre, desc, precio, stock, idM);
+                    inventario.agregarProducto(nuevoProducto);
+                    cout << "Producto creado exitosamente!\n";
+                } else {
+                    cout << "Operacion cancelada.\n";
+                    }
 
                 system("pause");
                 system("cls");
@@ -57,12 +61,8 @@ void menuProductos(Inventario& inventario, ListaMarcas& listaMarcas) {
                 system("cls");
                 break;
 
-            case 3:
-                menuMarcas(listaMarcas, inventario);
-                system("cls");
-                break;
 
-            case 4:
+            case 3:
                 menuEdiciones(inventario, listaMarcas);
                 system("cls");
                 break;
