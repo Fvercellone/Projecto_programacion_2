@@ -9,37 +9,30 @@ class ListaMarcas;
 
 class Inventario {
 private:
-    std::string archivoProductos;
     std::vector<Producto> productos;
-    int ultimoID;
+    int ultimoID;  // ← NUEVO
 
 public:
-    Inventario(const std::string& archivo = "DATA/productos.txt");
+    Inventario();  // ← SIN parámetro
 
     void agregarProducto(const Producto& p);
     void eliminarProducto(int idProducto);
+    void editarPrecioProducto(int idProducto, float nuevoPrecio);
+    void cambiarMarcaProducto(int idProducto, int nuevaIdMarca, ListaMarcas& listaMarcas);
+    void editarNombreProducto(int idProducto, const std::string& nuevoNombre);
+    void editarDescripcionProducto(int idProducto, const std::string& nuevaDescripcion);
+    void activarProducto(int idProducto);
+    void desactivarProducto(int idProducto);
+    void mostrarProductosInactivos() const;
     Producto* buscarProducto(int idProducto);
     void mostrarInventario() const;
     int getCantidadTotal() const;
-    void editarPrecioProducto(int idProducto, float nuevoPrecio);
-    void editarNombreProducto(int idProducto, const std::string& nuevoNombre);
-    void editarDescripcionProducto(int idProducto, const std::string& nuevaDescripcion);
-
-    //MARCA
+    const std::vector<Producto>& getProductos() const { return productos; }
     int contarProductosPorMarca(int idMarca) const;
-    void mostrarProductosPorMarca(int idMarca) const;
     void reasignarProductosAMarca(int idMarcaVieja, int idMarcaNueva);
-    void cambiarMarcaProducto(int idProducto, int nuevaIdMarca, ListaMarcas& listaMarcas);
-
-    // Métodos para manejo de archivos
-    void guardarProductos() const;
-    void cargarProductos();
-
 
 private:
     int generarNuevoID();
-    void cargarUltimoID();
-    void guardarUltimoID() const;
 };
 
 #endif

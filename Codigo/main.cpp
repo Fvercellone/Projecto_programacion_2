@@ -2,8 +2,8 @@
 
 int main() {
 
-    ListaMarcas listaMarcas("DATA/marcas.txt");
-    Inventario inventario("DATA/productos.txt");
+    ListaMarcas listaMarcas;
+    Inventario inventario;
     menuPrincipal(inventario, listaMarcas);
 
     return 0;

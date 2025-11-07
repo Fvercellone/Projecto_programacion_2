@@ -7,16 +7,17 @@
 
 class Producto {
 private:
-    int idProducto;          // ID ˙nico del producto
+    int idProducto;
     std::string nombre;
     std::string descripcion;
     float precio;
     int stock;
-    int idMarca;             // RelaciÛn con Marca
+    int idMarca;
+    bool activo;  // ‚Üê NUEVO
 
 public:
-    // Constructor
-    Producto(int idP = 0, const std::string& n="", const std::string& d="", float p=0, int s=0, int idM=0);
+    // ACTUALIZAR constructor
+    Producto(int idP = 0, const std::string& n="", const std::string& d="", float p=0, int s=0, int idM=0, bool a=true);
 
     // Getters
     int getIdProducto() const;
@@ -25,6 +26,7 @@ public:
     float getPrecio() const;
     int getStock() const;
     int getIdMarca() const;
+    bool getActivo() const;  // ‚Üê NUEVO
 
     // Setters
     void setIdProducto(int id);
@@ -33,15 +35,11 @@ public:
     void setPrecio(float p);
     void setStock(int s);
     void setIdMarca(int idM);
+    void setActivo(bool a);  // ‚Üê NUEVO
 
-    // MÈtodos
     void mostrarInfo() const;
     void agregarStock(int cantidad);
     void quitarStock(int cantidad);
-
-    // MÈtodos para archivos
-    void guardarEnArchivo(std::ofstream& archivo) const;
-    bool cargarDesdeArchivo(std::ifstream& archivo);
 };
 
 #endif

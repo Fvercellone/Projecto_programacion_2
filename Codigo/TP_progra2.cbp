@@ -38,6 +38,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Manejo_Archivos.cpp" />
+		<Unit filename="Manejo_Archivos.h" />
 		<Unit filename="Marca.cpp" />
 		<Unit filename="Marca.h" />
 		<Unit filename="SeleccionFunciones.cpp" />

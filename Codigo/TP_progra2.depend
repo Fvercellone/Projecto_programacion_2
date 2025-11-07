@@ -305,64 +305,61 @@
 
 1760563860 source:d:\github\projecto_programacion_2\codigo\crear_archivos.cpp
 
-1760563860 source:d:\github\projecto_programacion_2\codigo\inventario.cpp
+1762482109 source:d:\github\projecto_programacion_2\codigo\inventario.cpp
 	"Inventario.h"
-	<iostream>
-	<fstream>
 	<algorithm>
-	<direct.h>
+	"Manejo_Archivos.h"
 	"ListaMarcas.h"
 
-1760563860 d:\github\projecto_programacion_2\codigo\inventario.h
+1762481329 d:\github\projecto_programacion_2\codigo\inventario.h
 	<vector>
 	<string>
 	"Producto.h"
 
-1760563860 d:\github\projecto_programacion_2\codigo\producto.h
+1762480812 d:\github\projecto_programacion_2\codigo\producto.h
 	<string>
 	<iostream>
 	<fstream>
 
-1760563860 d:\github\projecto_programacion_2\codigo\listamarcas.h
+1762481223 d:\github\projecto_programacion_2\codigo\listamarcas.h
 	<vector>
 	<string>
 	"Marca.h"
 	"Inventario.h"
 
-1760563860 d:\github\projecto_programacion_2\codigo\marca.h
+1762480844 d:\github\projecto_programacion_2\codigo\marca.h
 	<string>
 	<iostream>
 	<fstream>
 
-1760563860 source:d:\github\projecto_programacion_2\codigo\listamarcas.cpp
+1762482116 source:d:\github\projecto_programacion_2\codigo\listamarcas.cpp
 	"ListaMarcas.h"
-	<iostream>
-	<fstream>
 	<algorithm>
-	<direct.h>
+	"Manejo_Archivos.h"
 
-1760563860 source:d:\github\projecto_programacion_2\codigo\main.cpp
+1762481131 source:d:\github\projecto_programacion_2\codigo\main.cpp
 	"MenuPrincipal.h"
 
 1760563860 d:\github\projecto_programacion_2\codigo\menuprincipal.h
 	"Inventario.h"
 	"ListaMarcas.h"
 
-1760563860 source:d:\github\projecto_programacion_2\codigo\marca.cpp
+1762474090 source:d:\github\projecto_programacion_2\codigo\marca.cpp
 	"Marca.h"
 
 1760563860 source:d:\github\projecto_programacion_2\codigo\medio_de_pago.cpp
 
-1760563860 source:d:\github\projecto_programacion_2\codigo\menuinventario.cpp
+1762481263 source:d:\github\projecto_programacion_2\codigo\menuinventario.cpp
 	"MenuInventario.h"
 	<iostream>
 	"ListaMarcas.h"
+	"Manejo_Archivos.h"
 
 1760563860 d:\github\projecto_programacion_2\codigo\menuinventario.h
 	"Inventario.h"
 	"ListaMarcas.h"
 
-1760563860 source:d:\github\projecto_programacion_2\codigo\menumarcas.cpp
+1762480542 source:d:\github\projecto_programacion_2\codigo\menumarcas.cpp
 	"MenuMarcas.h"
 	<iostream>
 
@@ -381,7 +378,7 @@
 	"ListaMarcas.h"
 	"MenuMarcas.h"
 
-1760563860 source:d:\github\projecto_programacion_2\codigo\producto.cpp
+1762473988 source:d:\github\projecto_programacion_2\codigo\producto.cpp
 	"Producto.h"
 	<limits>
 
@@ -417,4 +414,16 @@
 
 1760569180 source:d:\github\projecto_programacion_2\codigo\seleccionfunciones.cpp
 	"SeleccionFunciones.h"
+
+1762481986 d:\github\projecto_programacion_2\codigo\manejo_archivos.h
+	<vector>
+	<string>
+	"Producto.h"
+	"Marca.h"
+
+1762482448 source:d:\github\projecto_programacion_2\codigo\manejo_archivos.cpp
+	<iostream>
+	<fstream>
+	<direct.h>
+	"Manejo_Archivos.h"
 

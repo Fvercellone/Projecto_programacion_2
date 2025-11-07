@@ -1,4 +1,2 @@
-0 SIN MARCA
-20001 coca cola
-20002 pepsi
-20003 oreo
+10000 test 1
+10001 tst2 0

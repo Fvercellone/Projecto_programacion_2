@@ -9,25 +9,23 @@ class Marca {
 private:
     int idMarca;
     std::string nombre;
+    bool activo;  // ← NUEVO
 
 public:
-    // Constructor
-    Marca(int id = 0, const std::string& n = "");
+    // ACTUALIZAR constructor
+    Marca(int id = 0, const std::string& n = "", bool a = true);
 
     // Getters
     int getIdMarca() const;
     std::string getNombre() const;
+    bool getActivo() const;  // ← NUEVO
 
     // Setters
     void setIdMarca(int id);
     void setNombre(const std::string& n);
+    void setActivo(bool a);  // ← NUEVO
 
-    // Mostrar
     void mostrarInfo() const;
-
-    // M�todos para archivos
-    void guardarEnArchivo(std::ofstream& archivo) const;
-    bool cargarDesdeArchivo(std::ifstream& archivo);
 };
 
 #endif

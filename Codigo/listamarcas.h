@@ -6,35 +6,27 @@
 #include "Marca.h"
 #include "Inventario.h"
 
-class ListaMarcas {
+class Inventario;
 
+class ListaMarcas {
 private:
     std::vector<Marca> marcas;
-    std::string archivoMarcas;
-    int ultimoID;
+    int ultimoID;  // ← NUEVO
 
 public:
-    ListaMarcas(const std::string& archivo = "DATA/marcas.txt");
+    ListaMarcas();  // ← SIN parámetro
 
     void agregarMarca(const Marca& m);
-    Marca* buscarMarca(int id);
     void eliminarMarca(int idMarca, Inventario& inventario);
+    void activarMarca(int idMarca);
+    void desactivarMarca(int idMarca);
+    void mostrarMarcasInactivas() const;
+    Marca* buscarMarca(int id);
     void mostrarMarcas() const;
-
-    // M�todos para archivos
-    void guardarMarcas() const;
-    void cargarMarcas();
+    const std::vector<Marca>& getMarcas() const { return marcas; }  // ← NUEVO
 
 private:
     int generarNuevoID();
-    void cargarUltimoID();
-    void guardarUltimoID() const;
-
-public:
-    // Getter agregado para acceder al vector de marcas
-    const std::vector<Marca>& getMarcas() const { return marcas; }
-
-
 };
 
 #endif
