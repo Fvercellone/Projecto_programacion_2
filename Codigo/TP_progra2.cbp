@@ -45,15 +45,11 @@
 		<Unit filename="SeleccionFunciones.cpp" />
 		<Unit filename="SeleccionFunciones.h" />
 		<Unit filename="Seleccionador.h" />
-		<Unit filename="crear_archivos.cpp" />
-		<Unit filename="crear_archivos.h" />
 		<Unit filename="inventario.cpp" />
 		<Unit filename="inventario.h" />
 		<Unit filename="listamarcas.cpp" />
 		<Unit filename="listamarcas.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="medio_de_pago.cpp" />
-		<Unit filename="medio_de_pago.h" />
 		<Unit filename="menuediciones.cpp" />
 		<Unit filename="menuediciones.h" />
 		<Unit filename="menuinventario.cpp" />
