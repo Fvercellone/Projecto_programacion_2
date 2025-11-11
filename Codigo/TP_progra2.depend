@@ -340,16 +340,19 @@
 1762481131 source:d:\github\projecto_programacion_2\codigo\main.cpp
 	"MenuPrincipal.h"
 
-1760563860 d:\github\projecto_programacion_2\codigo\menuprincipal.h
+1762824628 d:\github\projecto_programacion_2\codigo\menuprincipal.h
 	"Inventario.h"
 	"ListaMarcas.h"
+	"ListaMediosPago.h"
+	"MenuVentas.h"
+	"MenuFacturas.h"
 
 1762474090 source:d:\github\projecto_programacion_2\codigo\marca.cpp
 	"Marca.h"
 
 1760563860 source:d:\github\projecto_programacion_2\codigo\medio_de_pago.cpp
 
-1762820167 source:d:\github\projecto_programacion_2\codigo\menuinventario.cpp
+1762820615 source:d:\github\projecto_programacion_2\codigo\menuinventario.cpp
 	"MenuInventario.h"
 	<iostream>
 	"ListaMarcas.h"
@@ -367,18 +370,20 @@
 	"ListaMarcas.h"
 	"Inventario.h"
 
-1760563860 source:d:\github\projecto_programacion_2\codigo\menuprincipal.cpp
+1762824774 source:d:\github\projecto_programacion_2\codigo\menuprincipal.cpp
 	"MenuPrincipal.h"
 	"MenuProductos.h"
 	"MenuMarcas.h"
+	"MenuMediosPago.h"
 	<iostream>
+	<stdlib.h>
 
 1760563860 d:\github\projecto_programacion_2\codigo\menuproductos.h
 	"Inventario.h"
 	"ListaMarcas.h"
 	"MenuMarcas.h"
 
-1762473988 source:d:\github\projecto_programacion_2\codigo\producto.cpp
+1762821387 source:d:\github\projecto_programacion_2\codigo\producto.cpp
 	"Producto.h"
 	<limits>
 
@@ -417,11 +422,14 @@
 
 1760569180 D
 
-1762481986 d:\github\projecto_programacion_2\codigo\manejo_archivos.h
+1762824975 d:\github\projecto_programacion_2\codigo\manejo_archivos.h
 	<vector>
 	<string>
 	"Producto.h"
 	"Marca.h"
+	"MedioPago.h"
+	"Venta.h"
+	"Factura.h"
 
 1762482448 source:d:\github\projecto_programacion_2\codigo\manejo_archivos.cpp
 	<iostream>
@@ -547,4 +555,81 @@
 	"SeleccionFunciones.h"
 
 1762353511 8858761241e0f876a19872aacf377f6a69d9b
+
+1762824846 d:\github\projecto_programacion_2\codigo\mediopago.h
+	<string>
+	<iostream>
+
+1762823462 d:\github\projecto_programacion_2\codigo\venta.h
+	<vector>
+	<string>
+	"Producto.h"
+	"MedioPago.h"
+
+1762822578 d:\github\projecto_programacion_2\codigo\listamediospago.h
+	<vector>
+	<string>
+	"MedioPago.h"
+
+1762824741 d:\github\projecto_programacion_2\codigo\menuventas.h
+	"ListaVentas.h"
+	"Inventario.h"
+	"ListaMediosPago.h"
+
+1762824094 d:\github\projecto_programacion_2\codigo\listaventas.h
+	<vector>
+	"Venta.h"
+	"Inventario.h"
+	"ListaMediosPago.h"
+
+1762824748 d:\github\projecto_programacion_2\codigo\menufacturas.h
+	"ListaFacturas.h"
+	"ListaVentas.h"
+
+1762824207 d:\github\projecto_programacion_2\codigo\listafacturas.h
+	<vector>
+	"Factura.h"
+	"ListaVentas.h"
+
+1762824951 d:\github\projecto_programacion_2\codigo\factura.h
+	<string>
+	"Venta.h"
+
+1762824183 source:d:\github\projecto_programacion_2\codigo\factura.cpp
+	"Factura.h"
+	<iostream>
+	<iomanip>
+	<sstream>
+
+1762822397 source:d:\github\projecto_programacion_2\codigo\mediopago.cpp
+	"MedioPago.h"
+
+1762824340 source:d:\github\projecto_programacion_2\codigo\menufacturas.cpp
+	"MenuFacturas.h"
+	<iostream>
+	<limits>
+
+1762823068 source:d:\github\projecto_programacion_2\codigo\menumediospago.cpp
+	"MenuMediosPago.h"
+	"ListaMediosPago.h"
+	<iostream>
+	<limits>
+
+1762824758 d:\github\projecto_programacion_2\codigo\menumediospago.h
+	"ListaMediosPago.h"
+
+1762823921 source:d:\github\projecto_programacion_2\codigo\menuventas.cpp
+	"MenuVentas.h"
+	<iostream>
+	<limits>
+
+1762823469 source:d:\github\projecto_programacion_2\codigo\venta.cpp
+	"Venta.h"
+	<iostream>
+
+1762824884 source:d:\github\projecto_programacion_2\codigo\listafacturas.cpp
+	"ListaFacturas.h"
+	"Manejo_Archivos.h"
+	<iostream>
+	<limits>
 
