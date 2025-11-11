@@ -87,11 +87,11 @@ void ListaVentas::crearVenta(Inventario& inventario, ListaMediosPago& listaMedio
                 cout << "Ingrese ID del medio de pago: ";
                 cin >> idMedioPago;
 
-                MedioPago* medio = listaMediosPago.buscarMedioPago(idMedioPago);
-                if (!medio || !medio->getActivo()) {
-                    cout << "Error: Medio de pago no encontrado o inactivo.\n";
-                    break;
-                }
+                 MedioPago* medio = listaMediosPago.buscarMedioPagoActivo(idMedioPago);
+                        if (!medio) {
+                            cout << "Error: Medio de pago no encontrado o inactivo.\n";
+                            break;
+                        }
 
                 // Configurar medio de pago
                 nuevaVenta.setMedioPago(medio->getIdMedioPago(), medio->getNombre(), medio->getAjuste());

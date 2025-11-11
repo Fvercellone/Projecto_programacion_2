@@ -431,7 +431,7 @@
 	"Venta.h"
 	"Factura.h"
 
-1762482448 source:d:\github\projecto_programacion_2\codigo\manejo_archivos.cpp
+1762826040 source:d:\github\projecto_programacion_2\codigo\manejo_archivos.cpp
 	<iostream>
 	<fstream>
 	<direct.h>
@@ -566,7 +566,7 @@
 	"Producto.h"
 	"MedioPago.h"
 
-1762822578 d:\github\projecto_programacion_2\codigo\listamediospago.h
+1762825652 d:\github\projecto_programacion_2\codigo\listamediospago.h
 	<vector>
 	<string>
 	"MedioPago.h"
@@ -601,7 +601,7 @@
 	<iomanip>
 	<sstream>
 
-1762822397 source:d:\github\projecto_programacion_2\codigo\mediopago.cpp
+1762826089 source:d:\github\projecto_programacion_2\codigo\mediopago.cpp
 	"MedioPago.h"
 
 1762824340 source:d:\github\projecto_programacion_2\codigo\menufacturas.cpp
@@ -629,6 +629,17 @@
 
 1762824884 source:d:\github\projecto_programacion_2\codigo\listafacturas.cpp
 	"ListaFacturas.h"
+	"Manejo_Archivos.h"
+	<iostream>
+	<limits>
+
+1762825675 source:d:\github\projecto_programacion_2\codigo\listamediospago.cpp
+	"ListaMediosPago.h"
+	"Manejo_Archivos.h"
+	<algorithm>
+
+1762825743 source:d:\github\projecto_programacion_2\codigo\listaventas.cpp
+	"ListaVentas.h"
 	"Manejo_Archivos.h"
 	<iostream>
 	<limits>

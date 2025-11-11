@@ -1,8 +1,14 @@
 #include "MedioPago.h"
 
 MedioPago::MedioPago(int id, const std::string& n, double a, bool act)
-    : idMedioPago(id), nombre(n), ajuste(a), activo(act) {}
+    : idMedioPago(id), nombre(n), ajuste(a), activo(act) {
 
+    // Validar que el ajuste sea razonable
+    if (ajuste <= 0) {
+        std::cout << "ADVERTENCIA: Ajuste invalido (" << ajuste << "), estableciendo a 1.0" << std::endl;
+        ajuste = 1.0;
+    }
+}
 // Getters
 int MedioPago::getIdMedioPago() const { return idMedioPago; }
 std::string MedioPago::getNombre() const { return nombre; }

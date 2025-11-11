@@ -17,7 +17,8 @@ public:
     void eliminarMedioPago(int idMedioPago);
     void activarMedioPago(int idMedioPago);
     void desactivarMedioPago(int idMedioPago);
-    MedioPago* buscarMedioPago(int id);
+    MedioPago* buscarMedioPago(int id);  // Busca sin importar estado
+    MedioPago* buscarMedioPagoActivo(int id);  // ← NUEVA: Solo busca activos
     void mostrarMediosPago() const;
     void mostrarMediosPagoActivos() const;
     const std::vector<MedioPago>& getMediosPagoActivos() const;

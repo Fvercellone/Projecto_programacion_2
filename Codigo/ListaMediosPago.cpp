@@ -79,6 +79,16 @@ MedioPago* ListaMediosPago::buscarMedioPago(int id) {
     return nullptr;
 }
 
+// NUEVA función - Solo busca medios de pago ACTIVOS
+MedioPago* ListaMediosPago::buscarMedioPagoActivo(int id) {
+    for (auto& mp : mediosPago) {
+        if (mp.getIdMedioPago() == id && mp.getActivo()) {
+            return &mp;
+        }
+    }
+    return nullptr;
+}
+
 void ListaMediosPago::mostrarMediosPago() const {
     std::cout << "=== TODOS LOS MEDIOS DE PAGO ===\n";
     for (const auto& mp : mediosPago) {

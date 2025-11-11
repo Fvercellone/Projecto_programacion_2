@@ -128,12 +128,16 @@ void ManejadorArchivos::guardarMediosPago(const std::vector<MedioPago>& mediosPa
 
     for (const auto& medio : mediosPago) {
         file << medio.getIdMedioPago() << " "
-             << medio.getNombre() << " "
+             << medio.getNombre() << "|"  // ← Usar pipe como separador
              << medio.getAjuste() << " "
              << medio.getActivo() << "\n";
+
+        std::cout << "DEBUG: Guardado - ID: " << medio.getIdMedioPago()
+                  << " Nombre: " << medio.getNombre()
+                  << " Ajuste: " << medio.getAjuste()
+                  << " Activo: " << medio.getActivo() << std::endl;
     }
 }
-
 std::vector<MedioPago> ManejadorArchivos::cargarMediosPago(const std::string& archivo) {
     std::vector<MedioPago> mediosPago;
 
@@ -147,10 +151,14 @@ std::vector<MedioPago> ManejadorArchivos::cargarMediosPago(const std::string& ar
     std::string nombre;
     double ajuste;
     bool activo;
+    char separador;
 
     while (file >> id) {
-        file.ignore(1, ' ');
-        std::getline(file, nombre, ' ');
+        file.ignore(1, ' ');  // Ignorar espacio después del ID
+
+        // Leer nombre hasta el pipe
+        std::getline(file, nombre, '|');
+
         file >> ajuste >> activo;
         file.ignore(1000, '\n');
 
@@ -159,7 +167,6 @@ std::vector<MedioPago> ManejadorArchivos::cargarMediosPago(const std::string& ar
 
     return mediosPago;
 }
-
 
 /// VENTAS
 void ManejadorArchivos::guardarVentas(const std::vector<Venta>& ventas, const std::string& archivo) {
