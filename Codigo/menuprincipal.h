@@ -6,6 +6,7 @@
 #include "ListaMediosPago.h"
 #include "MenuVentas.h"
 #include "MenuFacturas.h"
+#include "ListaVentas.h"
 
 void menuPrincipal(Inventario& inventario, ListaMarcas& listaMarcas);
 

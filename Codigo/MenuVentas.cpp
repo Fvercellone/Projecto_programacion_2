@@ -4,8 +4,7 @@
 
 using namespace std;
 
-void MenuVentas::mostrarMenu(Inventario& inventario, ListaMediosPago& listaMediosPago) {
-    ListaVentas listaVentas;
+void MenuVentas::mostrarMenu(Inventario& inventario, ListaMediosPago& listaMediosPago, ListaVentas& listaVentas) {
     int opcion;
 
     do {

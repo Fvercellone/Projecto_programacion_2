@@ -340,12 +340,13 @@
 1762481131 source:d:\github\projecto_programacion_2\codigo\main.cpp
 	"MenuPrincipal.h"
 
-1762824628 d:\github\projecto_programacion_2\codigo\menuprincipal.h
+1762826972 d:\github\projecto_programacion_2\codigo\menuprincipal.h
 	"Inventario.h"
 	"ListaMarcas.h"
 	"ListaMediosPago.h"
 	"MenuVentas.h"
 	"MenuFacturas.h"
+	"ListaVentas.h"
 
 1762474090 source:d:\github\projecto_programacion_2\codigo\marca.cpp
 	"Marca.h"
@@ -571,7 +572,7 @@
 	<string>
 	"MedioPago.h"
 
-1762824741 d:\github\projecto_programacion_2\codigo\menuventas.h
+1762826920 d:\github\projecto_programacion_2\codigo\menuventas.h
 	"ListaVentas.h"
 	"Inventario.h"
 	"ListaMediosPago.h"
@@ -618,7 +619,7 @@
 1762824758 d:\github\projecto_programacion_2\codigo\menumediospago.h
 	"ListaMediosPago.h"
 
-1762823921 source:d:\github\projecto_programacion_2\codigo\menuventas.cpp
+1762826943 source:d:\github\projecto_programacion_2\codigo\menuventas.cpp
 	"MenuVentas.h"
 	<iostream>
 	<limits>
@@ -627,7 +628,7 @@
 	"Venta.h"
 	<iostream>
 
-1762824884 source:d:\github\projecto_programacion_2\codigo\listafacturas.cpp
+1762826742 source:d:\github\projecto_programacion_2\codigo\listafacturas.cpp
 	"ListaFacturas.h"
 	"Manejo_Archivos.h"
 	<iostream>

@@ -7,7 +7,7 @@
 
 class MenuVentas {
 public:
-    void mostrarMenu(Inventario& inventario, ListaMediosPago& listaMediosPago);
+    void mostrarMenu(Inventario& inventario, ListaMediosPago& listaMediosPago, ListaVentas& listaVentas);
 
 private:
     void crearVenta(ListaVentas& listaVentas, Inventario& inventario, ListaMediosPago& listaMediosPago);

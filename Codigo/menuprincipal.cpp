@@ -8,11 +8,11 @@
 using namespace std;
 
 void menuPrincipal(Inventario& inventario, ListaMarcas& listaMarcas) {
-    // Inicializar los otros m�dulos
+    // Inicializar los otros módulos - CREAR UNA SOLA INSTANCIA
     ListaMediosPago listaMediosPago;
     MenuVentas menuVentas;
     MenuFacturas menuFacturas;
-    ListaVentas listaVentas;  // Para el m�dulo de facturas
+    ListaVentas listaVentas;  // ← MISMA instancia para ventas y facturas
 
     int opcion;
     do {
@@ -55,19 +55,19 @@ void menuPrincipal(Inventario& inventario, ListaMarcas& listaMarcas) {
 
             case 4:
                 system("cls");
-                menuVentas.mostrarMenu(inventario, listaMediosPago);
+                menuVentas.mostrarMenu(inventario, listaMediosPago, listaVentas); // ← 3 parámetros
                 system("cls");
                 break;
 
             case 5:
                 system("cls");
-                menuFacturas.mostrarMenu(listaVentas);
+                menuFacturas.mostrarMenu(listaVentas);  // ← MISMA listaVentas
                 system("cls");
                 break;
 
             case 0:
                 system("cls");
-                cout << "Gracias por usar el sistema. �Hasta pronto!\n";
+                cout << "Gracias por usar el sistema. ¡Hasta pronto!\n";
                 break;
 
             default:
