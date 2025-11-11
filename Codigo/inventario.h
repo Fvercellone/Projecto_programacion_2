@@ -21,9 +21,14 @@ public:
     void cambiarMarcaProducto(int idProducto, int nuevaIdMarca, ListaMarcas& listaMarcas);
     void editarNombreProducto(int idProducto, const std::string& nuevoNombre);
     void editarDescripcionProducto(int idProducto, const std::string& nuevaDescripcion);
+
     void activarProducto(int idProducto);
     void desactivarProducto(int idProducto);
+
     void mostrarProductosInactivos() const;
+    void mostrarProductosActivos() const;
+
+
     Producto* buscarProducto(int idProducto);
     void mostrarInventario() const;
     int getCantidadTotal() const;

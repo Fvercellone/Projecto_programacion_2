@@ -142,6 +142,19 @@ void Inventario::mostrarProductosInactivos() const {
     std::cout << "Total productos inactivos: " << contador << "\n";
 }
 
+
+void Inventario::mostrarProductosActivos() const {
+    std::cout << "=== PRODUCTOS INACTIVOS ===\n";
+    int contador = 0;
+    for (const auto& p : productos) {
+        if (p.getActivo()) {
+            p.mostrarInfo();
+            contador++;
+        }
+    }
+    std::cout << "Total productos inactivos: " << contador << "\n";
+}
+
 int Inventario::contarProductosPorMarca(int idMarca) const {
     int contador = 0;
     for (const auto& producto : productos) {

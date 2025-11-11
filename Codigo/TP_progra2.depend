@@ -305,13 +305,13 @@
 
 1760563860 source:d:\github\projecto_programacion_2\codigo\crear_archivos.cpp
 
-1762482109 source:d:\github\projecto_programacion_2\codigo\inventario.cpp
+1762820507 source:d:\github\projecto_programacion_2\codigo\inventario.cpp
 	"Inventario.h"
 	<algorithm>
 	"Manejo_Archivos.h"
 	"ListaMarcas.h"
 
-1762481329 d:\github\projecto_programacion_2\codigo\inventario.h
+1762820442 d:\github\projecto_programacion_2\codigo\inventario.h
 	<vector>
 	<string>
 	"Producto.h"
@@ -349,7 +349,7 @@
 
 1760563860 source:d:\github\projecto_programacion_2\codigo\medio_de_pago.cpp
 
-1762481263 source:d:\github\projecto_programacion_2\codigo\menuinventario.cpp
+1762820167 source:d:\github\projecto_programacion_2\codigo\menuinventario.cpp
 	"MenuInventario.h"
 	<iostream>
 	"ListaMarcas.h"
@@ -382,7 +382,7 @@
 	"Producto.h"
 	<limits>
 
-1760569162 source:d:\github\projecto_programacion_2\codigo\menuediciones.cpp
+1762820075 source:d:\github\projecto_programacion_2\codigo\menuediciones.cpp
 	"menuediciones.h"
 	"SeleccionFunciones.h"
 	<iostream>
@@ -415,7 +415,8 @@
 1760569180 source:d:\github\projecto_programacion_2\codigo\seleccionfunciones.cpp
 	"SeleccionFunciones.h"
 
-<<<<<<< HEAD
+1760569180 D
+
 1762481986 d:\github\projecto_programacion_2\codigo\manejo_archivos.h
 	<vector>
 	<string>
@@ -427,7 +428,9 @@
 	<fstream>
 	<direct.h>
 	"Manejo_Archivos.h"
-=======
+
+1762482448 chivos.h"
+
 1762353511 source:c:\users\thomas\onedrive - tepsi argentina\escritorio\tpi gestion utn\projecto_programacion_2\codigo\crear_archivos.cpp
 
 1762353511 source:c:\users\thomas\onedrive - tepsi argentina\escritorio\tpi gestion utn\projecto_programacion_2\codigo\inventario.cpp
@@ -542,5 +545,6 @@
 
 1762353511 source:c:\users\thomas\onedrive - tepsi argentina\escritorio\tpi gestion utn\projecto_programacion_2\codigo\seleccionfunciones.cpp
 	"SeleccionFunciones.h"
->>>>>>> dd28858761241e0f876a19872aacf377f6a69d9b
+
+1762353511 8858761241e0f876a19872aacf377f6a69d9b
 

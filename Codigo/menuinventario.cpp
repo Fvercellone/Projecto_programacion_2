@@ -13,9 +13,8 @@ void menuInventario(Inventario& inventario, ListaMarcas& listaMarcas) {
         cout << "3. Ingresar stock\n";
         cout << "4. Descontar stock\n";
         cout << "5. Mostrar Inventario\n";
-        cout << "6. Activar producto\n";
-        cout << "7. Desactivar producto\n";
-        cout << "8. Mostrar productos inactivos\n";
+        cout << "6. Mostrar productos inactivos\n";
+        cout << "7. Mostrar productos activos\n";
         cout << "0. Volver\n";
         cout << "Opcion: ";
         cin >> opcion;
@@ -74,29 +73,36 @@ void menuInventario(Inventario& inventario, ListaMarcas& listaMarcas) {
                 break;
             }
 
-            case 6: {  // Activar producto
-                int id;
-                cout << "Ingrese ID del producto a ACTIVAR: ";
-                cin >> id;
-                inventario.activarProducto(id);
-                system("pause");
-                system("cls");
-                break;
-            }
-            case 7: { // Desactivar producto
-                int id;
-                cout << "Ingrese ID del producto a DESACTIVAR: ";
-                cin >> id;
-                inventario.desactivarProducto(id);
-                system("pause");
-                system("cls");
-                break;
-            }
-            case 8: { // Mostrar inactivos
+//            case 6: {  // Activar producto
+//                int id;
+//                cout << "Ingrese ID del producto a ACTIVAR: ";
+//                cin >> id;
+//                inventario.activarProducto(id);
+//                system("pause");
+//                system("cls");
+//                break;
+//            }
+//            case 7: { // Desactivar producto
+//                int id;
+//                cout << "Ingrese ID del producto a DESACTIVAR: ";
+//                cin >> id;
+//                inventario.desactivarProducto(id);
+//                system("pause");
+//                system("cls");
+//                break;
+//            }
+            case 6: { // Mostrar inactivos
                 inventario.mostrarProductosInactivos();
                 system("pause");
                 system("cls");
                 break;
+            }
+
+            case 7: { // Mostrar Activos
+            inventario.mostrarProductosActivos();
+            system("pause");
+            system("cls");
+            break;
             }
 
             case 0: break;

@@ -13,6 +13,8 @@ void menuEdiciones(Inventario& inventario, ListaMarcas& listaMarcas) {
         cout << "2. Editar marca producto\n";
         cout << "3. Editar nombre producto\n";
         cout << "4. Editar descripcion producto\n";
+        cout << "5. Activar producto\n";
+        cout << "6. Desactivar producto\n";
         cout << "0. Volver\n";
         cout << "Opcion: ";
         cin >> opcion;
@@ -96,6 +98,25 @@ void menuEdiciones(Inventario& inventario, ListaMarcas& listaMarcas) {
                     inventario.editarDescripcionProducto(id, nuevaDesc);
                 } else cout << "Producto no encontrado.\n";
                 system("pause");
+                break;
+            }
+
+               case 5: {  // Activar producto
+                int id;
+                cout << "Ingrese ID del producto a ACTIVAR: ";
+                cin >> id;
+                inventario.activarProducto(id);
+                system("pause");
+                system("cls");
+                break;
+            }
+            case 6: { // Desactivar producto
+                int id;
+                cout << "Ingrese ID del producto a DESACTIVAR: ";
+                cin >> id;
+                inventario.desactivarProducto(id);
+                system("pause");
+                system("cls");
                 break;
             }
 
