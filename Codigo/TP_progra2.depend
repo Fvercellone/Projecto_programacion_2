@@ -645,3 +645,220 @@
 	<iostream>
 	<limits>
 
+1762987009 source:c:\users\franco\desktop\projecto_programacion_2\codigo\factura.cpp
+	"Factura.h"
+	<iostream>
+	<iomanip>
+	<sstream>
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\factura.h
+	<string>
+	"Venta.h"
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\venta.h
+	<vector>
+	<string>
+	"Producto.h"
+	"MedioPago.h"
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\producto.h
+	<string>
+	<iostream>
+	<fstream>
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\mediopago.h
+	<string>
+	<iostream>
+
+1762987009 source:c:\users\franco\desktop\projecto_programacion_2\codigo\inventario.cpp
+	"Inventario.h"
+	<algorithm>
+	"Manejo_Archivos.h"
+	"ListaMarcas.h"
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\inventario.h
+	<vector>
+	<string>
+	"Producto.h"
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\manejo_archivos.h
+	<vector>
+	<string>
+	"Producto.h"
+	"Marca.h"
+	"MedioPago.h"
+	"Venta.h"
+	"Factura.h"
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\marca.h
+	<string>
+	<iostream>
+	<fstream>
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\listamarcas.h
+	<vector>
+	<string>
+	"Marca.h"
+	"Inventario.h"
+
+1762989968 source:c:\users\franco\desktop\projecto_programacion_2\codigo\listafacturas.cpp
+	"ListaFacturas.h"
+	"Manejo_Archivos.h"
+	<iostream>
+	<limits>
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\listafacturas.h
+	<vector>
+	"Factura.h"
+	"ListaVentas.h"
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\listaventas.h
+	<vector>
+	"Venta.h"
+	"Inventario.h"
+	"ListaMediosPago.h"
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\listamediospago.h
+	<vector>
+	<string>
+	"MedioPago.h"
+
+1762987009 source:c:\users\franco\desktop\projecto_programacion_2\codigo\listamarcas.cpp
+	"ListaMarcas.h"
+	<algorithm>
+	"Manejo_Archivos.h"
+
+1762988384 source:c:\users\franco\desktop\projecto_programacion_2\codigo\listamediospago.cpp
+	"ListaMediosPago.h"
+	"Manejo_Archivos.h"
+	<algorithm>
+
+1762989581 source:c:\users\franco\desktop\projecto_programacion_2\codigo\listaventas.cpp
+	"ListaVentas.h"
+	"Manejo_Archivos.h"
+	<iostream>
+	<limits>
+
+1762987009 source:c:\users\franco\desktop\projecto_programacion_2\codigo\main.cpp
+	"MenuPrincipal.h"
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\menuprincipal.h
+	"Inventario.h"
+	"ListaMarcas.h"
+	"ListaMediosPago.h"
+	"MenuVentas.h"
+	"MenuFacturas.h"
+	"ListaVentas.h"
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\menuventas.h
+	"ListaVentas.h"
+	"Inventario.h"
+	"ListaMediosPago.h"
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\menufacturas.h
+	"ListaFacturas.h"
+	"ListaVentas.h"
+
+1762987009 source:c:\users\franco\desktop\projecto_programacion_2\codigo\manejo_archivos.cpp
+	<iostream>
+	<fstream>
+	<direct.h>
+	"Manejo_Archivos.h"
+
+1762987009 source:c:\users\franco\desktop\projecto_programacion_2\codigo\marca.cpp
+	"Marca.h"
+
+1762987009 source:c:\users\franco\desktop\projecto_programacion_2\codigo\mediopago.cpp
+	"MedioPago.h"
+
+1762990164 source:c:\users\franco\desktop\projecto_programacion_2\codigo\menuediciones.cpp
+	"menuediciones.h"
+	"SeleccionFunciones.h"
+	<iostream>
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\menuediciones.h
+	"Inventario.h"
+	"ListaMarcas.h"
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\seleccionfunciones.h
+	"ListaMarcas.h"
+	"Seleccionador.h"
+	<iostream>
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\seleccionador.h
+	<iostream>
+	<vector>
+	<conio.h>
+	<windows.h>
+	<functional>
+
+1762990149 source:c:\users\franco\desktop\projecto_programacion_2\codigo\menufacturas.cpp
+	"MenuFacturas.h"
+	<iostream>
+	<limits>
+
+1762990173 source:c:\users\franco\desktop\projecto_programacion_2\codigo\menuinventario.cpp
+	"MenuInventario.h"
+	<iostream>
+	"ListaMarcas.h"
+	"Manejo_Archivos.h"
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\menuinventario.h
+	"Inventario.h"
+	"ListaMarcas.h"
+
+1762990178 source:c:\users\franco\desktop\projecto_programacion_2\codigo\menumarcas.cpp
+	"MenuMarcas.h"
+	<iostream>
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\menumarcas.h
+	"ListaMarcas.h"
+	"Inventario.h"
+
+1762987009 source:c:\users\franco\desktop\projecto_programacion_2\codigo\menuprincipal.cpp
+	"MenuPrincipal.h"
+	"MenuProductos.h"
+	"MenuMarcas.h"
+	"MenuMediosPago.h"
+	<iostream>
+	<stdlib.h>
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\menuproductos.h
+	"Inventario.h"
+	"ListaMarcas.h"
+	"MenuMarcas.h"
+
+1762987009 c:\users\franco\desktop\projecto_programacion_2\codigo\menumediospago.h
+	"ListaMediosPago.h"
+
+1762989204 source:c:\users\franco\desktop\projecto_programacion_2\codigo\menuproductos.cpp
+	"MenuProductos.h"
+	"MenuInventario.h"
+	"MenuEdiciones.h"
+	"SeleccionFunciones.h"
+	<iostream>
+	<conio.h>
+	<algorithm>
+
+1762989524 source:c:\users\franco\desktop\projecto_programacion_2\codigo\menuventas.cpp
+	"MenuVentas.h"
+	<iostream>
+	<limits>
+
+1762987009 source:c:\users\franco\desktop\projecto_programacion_2\codigo\producto.cpp
+	"Producto.h"
+	<limits>
+
+1762987009 source:c:\users\franco\desktop\projecto_programacion_2\codigo\seleccionfunciones.cpp
+	"SeleccionFunciones.h"
+
+1762987009 source:c:\users\franco\desktop\projecto_programacion_2\codigo\venta.cpp
+	"Venta.h"
+	<iostream>
+
+1762990184 source:c:\users\franco\desktop\projecto_programacion_2\codigo\menumediospago.cpp
+	"MenuMediosPago.h"
+	"ListaMediosPago.h"
+	<iostream>
+	<limits>
+

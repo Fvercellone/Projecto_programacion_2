@@ -22,18 +22,23 @@ void MenuFacturas::mostrarMenu(ListaVentas& listaVentas) {
 
         switch(opcion) {
             case 1:
+                system("cls");
                 generarFactura(listaFacturas, listaVentas);
                 break;
             case 2:
+                system("cls");
                 mostrarFacturas(listaFacturas);
                 break;
             case 3:
+                system("cls");
                 mostrarFacturasActivas(listaFacturas);
                 break;
             case 4:
+                system("cls");
                 mostrarFacturaCompleta(listaFacturas);
                 break;
             case 5:
+                system("cls");
                 anularFactura(listaFacturas);
                 break;
             case 0:
@@ -41,6 +46,7 @@ void MenuFacturas::mostrarMenu(ListaVentas& listaVentas) {
                 break;
             default:
                 cout << "Opcion no valida. Intente nuevamente." << endl;
+                system("cls");
         }
     } while(opcion != 0);
 }
@@ -50,6 +56,7 @@ void MenuFacturas::generarFactura(ListaFacturas& listaFacturas, ListaVentas& lis
     cout << "\nPresione Enter para continuar...";
     cin.ignore();
     cin.get();
+    system("cls");
 }
 
 void MenuFacturas::anularFactura(ListaFacturas& listaFacturas) {
@@ -63,6 +70,7 @@ void MenuFacturas::anularFactura(ListaFacturas& listaFacturas) {
     cout << "\nPresione Enter para continuar...";
     cin.ignore();
     cin.get();
+    system("cls");
 }
 
 void MenuFacturas::mostrarFacturas(const ListaFacturas& listaFacturas) {
@@ -70,6 +78,7 @@ void MenuFacturas::mostrarFacturas(const ListaFacturas& listaFacturas) {
     cout << "\nPresione Enter para continuar...";
     cin.ignore();
     cin.get();
+    system("cls");
 }
 
 void MenuFacturas::mostrarFacturasActivas(const ListaFacturas& listaFacturas) {
@@ -77,6 +86,7 @@ void MenuFacturas::mostrarFacturasActivas(const ListaFacturas& listaFacturas) {
     cout << "\nPresione Enter para continuar...";
     cin.ignore();
     cin.get();
+    system("cls");
 }
 
 void MenuFacturas::mostrarFacturaCompleta(const ListaFacturas& listaFacturas) {
@@ -90,4 +100,5 @@ void MenuFacturas::mostrarFacturaCompleta(const ListaFacturas& listaFacturas) {
     cout << "\nPresione Enter para continuar...";
     cin.ignore();
     cin.get();
+    system("cls");
 }

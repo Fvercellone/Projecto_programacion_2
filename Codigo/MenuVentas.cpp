@@ -20,15 +20,19 @@ void MenuVentas::mostrarMenu(Inventario& inventario, ListaMediosPago& listaMedio
 
         switch(opcion) {
             case 1:
+                system("cls");
                 crearVenta(listaVentas, inventario, listaMediosPago);
                 break;
             case 2:
+                system("cls");
                 mostrarVentas(listaVentas);
                 break;
             case 3:
+                system("cls");
                 mostrarVentasActivas(listaVentas);
                 break;
             case 4:
+                system("cls");
                 anularVenta(listaVentas);
                 break;
             case 0:
@@ -58,6 +62,7 @@ void MenuVentas::anularVenta(ListaVentas& listaVentas) {
     cout << "\nPresione Enter para continuar...";
     cin.ignore();
     cin.get();
+    system("cls");
 }
 
 void MenuVentas::mostrarVentas(const ListaVentas& listaVentas) {
@@ -65,6 +70,7 @@ void MenuVentas::mostrarVentas(const ListaVentas& listaVentas) {
     cout << "\nPresione Enter para continuar...";
     cin.ignore();
     cin.get();
+    system("cls");
 }
 
 void MenuVentas::mostrarVentasActivas(const ListaVentas& listaVentas) {
@@ -72,4 +78,5 @@ void MenuVentas::mostrarVentasActivas(const ListaVentas& listaVentas) {
     cout << "\nPresione Enter para continuar...";
     cin.ignore();
     cin.get();
+    system("cls");
 }

@@ -41,6 +41,8 @@ void MenuMediosPago::mostrarMenu() {
                 break;
             case 3:
                 lista.mostrarMediosPagoActivos();
+                system("pause");
+                system("cls");
                 break;
             case 4:
                 activarMedioPago(lista);
@@ -56,6 +58,7 @@ void MenuMediosPago::mostrarMenu() {
                 break;
             default:
                 cout << "Opcion no valida. Intente nuevamente." << endl;
+                system("cls");
         }
     } while(opcion != 0);
 }
@@ -63,6 +66,8 @@ void MenuMediosPago::mostrarMenu() {
 void MenuMediosPago::agregarMedioPago(ListaMediosPago& lista) {
     string nombre;
     double ajuste;
+
+    system("cls");
 
     cout << "\n--- AGREGAR MEDIO DE PAGO ---" << endl;
 
@@ -84,6 +89,7 @@ void MenuMediosPago::agregarMedioPago(ListaMediosPago& lista) {
 }
 
 void MenuMediosPago::activarMedioPago(ListaMediosPago& lista) {
+    system("cls");
     int id;
 
     cout << "\n--- ACTIVAR MEDIO DE PAGO ---" << endl;
@@ -94,6 +100,7 @@ void MenuMediosPago::activarMedioPago(ListaMediosPago& lista) {
 }
 
 void MenuMediosPago::desactivarMedioPago(ListaMediosPago& lista) {
+    system("cls");
     int id;
 
     cout << "\n--- DESACTIVAR MEDIO DE PAGO ---" << endl;
@@ -104,6 +111,7 @@ void MenuMediosPago::desactivarMedioPago(ListaMediosPago& lista) {
 }
 
 void MenuMediosPago::eliminarMedioPago(ListaMediosPago& lista) {
+    system("cls");
     int id;
 
     cout << "\n--- ELIMINAR MEDIO DE PAGO ---" << endl;

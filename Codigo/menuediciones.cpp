@@ -121,7 +121,7 @@ void menuEdiciones(Inventario& inventario, ListaMarcas& listaMarcas) {
             }
 
             case 0: break;
-            default: cout << "Opción inválida.\n";
+            default: cout << "Opción inválida.\n"; system("cls");
         }
     } while (opcion != 0);
 }

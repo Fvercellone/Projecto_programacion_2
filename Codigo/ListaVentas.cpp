@@ -25,6 +25,7 @@ void ListaVentas::crearVenta(Inventario& inventario, ListaMediosPago& listaMedio
 
         switch(opcion) {
             case 1: {
+                system("cls");
                 // Mostrar productos activos
                 cout << "\n--- PRODUCTOS DISPONIBLES ---\n";
                 const auto& productos = inventario.getProductos();
@@ -70,12 +71,16 @@ void ListaVentas::crearVenta(Inventario& inventario, ListaMediosPago& listaMedio
                 nuevaVenta.agregarItem(item);
 
                 cout << "Producto agregado a la venta.\n";
+                system("pause");
+                system("cls");
                 break;
             }
 
             case 2: {
+                system("cls");
                 if (nuevaVenta.getItems().empty()) {
                     cout << "Error: No hay productos en la venta.\n";
+                    system("cls");
                     break;
                 }
 
@@ -110,16 +115,16 @@ void ListaVentas::crearVenta(Inventario& inventario, ListaMediosPago& listaMedio
                 } else {
                     cout << "Error al procesar la venta.\n";
                 }
-                return;
             }
 
             case 0:
                 cout << "Venta cancelada.\n";
+                system("cls");
                 return;
 
             default:
                 cout << "Opcion no valida.\n";
-        }
+        } system("cls");
     } while(true);
 }
 
@@ -195,6 +200,8 @@ Venta* ListaVentas::buscarVenta(int id) {
         if (venta.getIdVenta() == id) {
             return &venta;
         }
+        system("pause");
+    system("cls");
     }
     return nullptr;
 }

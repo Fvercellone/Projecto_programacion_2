@@ -106,7 +106,7 @@ void menuInventario(Inventario& inventario, ListaMarcas& listaMarcas) {
             }
 
             case 0: break;
-            default: cout << "Opcion invalida.\n";
+            default: cout << "Opcion invalida.\n"; system("cls");
         }
     } while(opcion != 0);
 }

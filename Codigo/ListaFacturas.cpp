@@ -68,7 +68,7 @@ void ListaFacturas::generarFactura(ListaVentas& listaVentas) {
     getline(cin, nombre);
     if (nombre.empty()) nombre = "CONSUMIDOR FINAL";
 
-    cout << "RUC/CI (Enter para 9999999999999): ";
+    cout << "Ingrese su DNI (Enter para 9999999999999): ";
     getline(cin, ruc);
     if (ruc.empty()) ruc = "9999999999999";
 
@@ -86,6 +86,8 @@ void ListaFacturas::generarFactura(ListaVentas& listaVentas) {
 
     facturas.push_back(nuevaFactura);
     ManejadorArchivos::guardarFacturas(facturas);
+
+    system("cls");
 
     cout << "\n=== FACTURA GENERADA ===\n";
     nuevaFactura.mostrarFacturaCompleta();

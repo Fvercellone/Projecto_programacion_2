@@ -8,3 +8,21 @@
 10003 30000 Mercado Ojete|0.9 30 27 1 2
   10000 tes|2 10
   10002 test3|1 10
+10004 30000 Mercado Ojete|0.9 10 9 1 1
+  10000 tes|1 10
+10005 30000 Mercado Ojete|0.9 10 9 1 1
+  10000 tes|1 10
+10006 30000 Mercado Ojete|0.9 10 9 0 1
+  10000 tes|1 10
+10007 30000 Mercado Ojete|0.9 10 9 1 1
+  10000 tes|1 10
+10008 30000 Mercado Ojete|0.9 10 9 1 1
+  10000 tes|1 10
+10009 30000 Mercado Ojete|0.9 10 9 1 1
+  10000 tes|1 10
+10010 30000 Mercado Ojete|0.9 10 9 1 1
+  10002 test3|1 10
+10011 30000 Mercado Ojete|0.9 10 9 1 1
+  10002 test3|1 10
+10012 30000 Mercado Ojete|0.9 10 9 0 1
+  10002 test3|1 10

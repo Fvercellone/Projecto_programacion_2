@@ -23,9 +23,11 @@ void ListaMediosPago::agregarMedioPago(const MedioPago& mp) {
     mediosPago.push_back(medioCopia);
     ManejadorArchivos::guardarMediosPago(mediosPago);
     std::cout << "Medio de pago agregado exitosamente! ID asignado: " << nuevoID << "\n";
+    system("pause");    system("cls");
 }
 
 void ListaMediosPago::eliminarMedioPago(int idMedioPago) {
+    system("cls");
     MedioPago* medio = buscarMedioPago(idMedioPago);
     if (medio) {
         if (!medio->getActivo()) {
@@ -38,9 +40,12 @@ void ListaMediosPago::eliminarMedioPago(int idMedioPago) {
     } else {
         std::cout << "Error: Medio de pago no encontrado.\n";
     }
+    system("pause");
+    system("cls");
 }
 
 void ListaMediosPago::activarMedioPago(int idMedioPago) {
+    system("cls");
     MedioPago* medio = buscarMedioPago(idMedioPago);
     if (medio) {
         if (medio->getActivo()) {
@@ -53,9 +58,12 @@ void ListaMediosPago::activarMedioPago(int idMedioPago) {
     } else {
         std::cout << "Error: Medio de pago no encontrado.\n";
     }
+    system("pause");
+    system("cls");
 }
 
 void ListaMediosPago::desactivarMedioPago(int idMedioPago) {
+    system("cls");
     MedioPago* medio = buscarMedioPago(idMedioPago);
     if (medio) {
         if (!medio->getActivo()) {
@@ -68,9 +76,12 @@ void ListaMediosPago::desactivarMedioPago(int idMedioPago) {
     } else {
         std::cout << "Error: Medio de pago no encontrado.\n";
     }
+    system("pause");
+    system("cls");
 }
 
 MedioPago* ListaMediosPago::buscarMedioPago(int id) {
+    system("cls");
     for (auto& mp : mediosPago) {
         if (mp.getIdMedioPago() == id) {
             return &mp;
@@ -81,6 +92,7 @@ MedioPago* ListaMediosPago::buscarMedioPago(int id) {
 
 // NUEVA función - Solo busca medios de pago ACTIVOS
 MedioPago* ListaMediosPago::buscarMedioPagoActivo(int id) {
+    system("cls");
     for (auto& mp : mediosPago) {
         if (mp.getIdMedioPago() == id && mp.getActivo()) {
             return &mp;
@@ -90,14 +102,18 @@ MedioPago* ListaMediosPago::buscarMedioPagoActivo(int id) {
 }
 
 void ListaMediosPago::mostrarMediosPago() const {
+    system("cls");
     std::cout << "=== TODOS LOS MEDIOS DE PAGO ===\n";
     for (const auto& mp : mediosPago) {
         mp.mostrarInfo();
     }
     std::cout << "Total medios de pago: " << mediosPago.size() << "\n";
+    system("pause");
+    system("cls");
 }
 
 void ListaMediosPago::mostrarMediosPagoActivos() const {
+    system("cls");
     std::cout << "=== MEDIOS DE PAGO ACTIVOS ===\n";
     int contador = 0;
     for (const auto& mp : mediosPago) {
