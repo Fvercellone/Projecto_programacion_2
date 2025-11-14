@@ -38,10 +38,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Devolucion.cpp" />
+		<Unit filename="Devolucion.h" />
 		<Unit filename="Factura.cpp" />
 		<Unit filename="Factura.h" />
-		<Unit filename="ListaFacturas.cpp" />
-		<Unit filename="ListaFacturas.h" />
 		<Unit filename="ListaMediosPago.cpp" />
 		<Unit filename="ListaMediosPago.h" />
 		<Unit filename="ListaVentas.cpp" />

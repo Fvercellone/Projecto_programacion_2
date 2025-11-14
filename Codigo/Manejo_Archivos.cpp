@@ -2,6 +2,7 @@
 #include <fstream>
 #include <direct.h>
 #include "Manejo_Archivos.h"
+#include "Devolucion.h"
 
 void ManejadorArchivos::crearCarpetaSiNoExiste(const std::string& carpeta) {
     _mkdir(carpeta.c_str());
@@ -168,89 +169,6 @@ std::vector<MedioPago> ManejadorArchivos::cargarMediosPago(const std::string& ar
     return mediosPago;
 }
 
-/// VENTAS
-void ManejadorArchivos::guardarVentas(const std::vector<Venta>& ventas, const std::string& archivo) {
-    // Crear carpeta si no existe
-    size_t pos = archivo.find_last_of("/\\");
-    if (pos != std::string::npos) {
-        std::string carpeta = archivo.substr(0, pos);
-        crearCarpetaSiNoExiste(carpeta);
-    }
-
-    std::ofstream file(archivo);
-    if (!file) {
-        std::cout << "Error al guardar ventas en " << archivo << std::endl;
-        return;
-    }
-
-    for (const auto& venta : ventas) {
-        // Guardar encabezado de venta
-        file << venta.getIdVenta() << " "
-             << venta.getIdMedioPago() << " "
-             << venta.getNombreMedioPago() << "|"
-             << venta.getAjusteMedioPago() << " "
-             << venta.getSubtotal() << " "
-             << venta.getTotal() << " "
-             << venta.getActivo() << " "
-             << venta.getItems().size() << "\n";
-
-        // Guardar items de la venta
-        for (const auto& item : venta.getItems()) {
-            file << "  " << item.getIdProducto() << " "
-                 << item.getNombreProducto() << "|"
-                 << item.getCantidad() << " "
-                 << item.getPrecioUnitario() << "\n";
-        }
-    }
-}
-
-std::vector<Venta> ManejadorArchivos::cargarVentas(const std::string& archivo) {
-    std::vector<Venta> ventas;
-
-    std::ifstream file(archivo);
-    if (!file) {
-        std::cout << "Archivo de ventas no encontrado: " << archivo << std::endl;
-        return ventas;
-    }
-
-    int idVenta, idMedioPago, numItems;
-    std::string nombreMedioPago;
-    double ajusteMedioPago;
-    float subtotal, total;
-    bool activo;
-
-    while (file >> idVenta >> idMedioPago) {
-        file.ignore(1, ' ');
-        std::getline(file, nombreMedioPago, '|');
-        file >> ajusteMedioPago >> subtotal >> total >> activo >> numItems;
-        file.ignore(1000, '\n');
-
-        // Crear venta
-        Venta venta(idVenta, idMedioPago, nombreMedioPago, ajusteMedioPago);
-        venta.setActivo(activo);
-
-        // Cargar items
-        for (int i = 0; i < numItems; i++) {
-            int idProducto, cantidad;
-            std::string nombreProducto;
-            float precioUnitario;
-
-            file.ignore(2, ' '); // Ignorar "  " al inicio de la línea
-            file >> idProducto;
-            file.ignore(1, ' ');
-            std::getline(file, nombreProducto, '|');
-            file >> cantidad >> precioUnitario;
-            file.ignore(1000, '\n');
-
-            ItemVenta item(idProducto, nombreProducto, cantidad, precioUnitario);
-            venta.agregarItem(item);
-        }
-
-        ventas.push_back(venta);
-    }
-
-    return ventas;
-}
 
 
 /// FACTURAS
@@ -313,6 +231,92 @@ std::vector<Factura> ManejadorArchivos::cargarFacturas(const std::string& archiv
     return facturas;
 }
 
+
+/// DEVOLUCIONES
+void ManejadorArchivos::guardarDevoluciones(const std::vector<Devolucion>& devoluciones, const std::string& archivo) {
+    size_t pos = archivo.find_last_of("/\\");
+    if (pos != std::string::npos) {
+        std::string carpeta = archivo.substr(0, pos);
+        crearCarpetaSiNoExiste(carpeta);
+    }
+
+    std::ofstream file(archivo);
+    if (!file) {
+        std::cout << "Error al guardar devoluciones en " << archivo << std::endl;
+        return;
+    }
+
+    for (const auto& devolucion : devoluciones) {
+        // Guardar encabezado de devolución
+        file << devolucion.getIdDevolucion() << " "
+             << devolucion.getIdFacturaOriginal() << " "
+             << devolucion.getFechaHora() << "|"
+             << devolucion.getNombreCliente() << "|"
+             << devolucion.getRucCliente() << "|"
+             << devolucion.getMotivo() << "|"
+             << devolucion.getTotalDevolucion() << " "
+             << devolucion.getActiva() << " "
+             << devolucion.getItemsDevueltos().size() << "\n";
+
+        // Guardar items de la devolución
+        for (const auto& item : devolucion.getItemsDevueltos()) {
+            file << "  " << item.getIdProducto() << " "
+                 << item.getNombreProducto() << "|"
+                 << item.getCantidad() << " "
+                 << item.getPrecioUnitario() << "\n";
+        }
+    }
+}
+
+std::vector<Devolucion> ManejadorArchivos::cargarDevoluciones(const std::string& archivo) {
+    std::vector<Devolucion> devoluciones;
+
+    std::ifstream file(archivo);
+    if (!file) {
+        std::cout << "Archivo de devoluciones no encontrado: " << archivo << std::endl;
+        return devoluciones;
+    }
+
+    int idDevolucion, idFacturaOriginal, numItems;
+    std::string fechaHora, nombreCliente, rucCliente, motivo;
+    float totalDevolucion;
+    bool activa;
+
+    while (file >> idDevolucion >> idFacturaOriginal) {
+        file.ignore(1, ' ');
+        std::getline(file, fechaHora, '|');
+        std::getline(file, nombreCliente, '|');
+        std::getline(file, rucCliente, '|');
+        std::getline(file, motivo, '|');
+        file >> totalDevolucion >> activa >> numItems;
+        file.ignore(1000, '\n');
+
+        // Crear devolución
+        Devolucion devolucion(idDevolucion, idFacturaOriginal, fechaHora, nombreCliente, rucCliente, motivo);
+        devolucion.setActiva(activa);
+
+        // Cargar items
+        for (int i = 0; i < numItems; i++) {
+            int idProducto, cantidad;
+            std::string nombreProducto;
+            float precioUnitario;
+
+            file.ignore(2, ' '); // Ignorar "  " al inicio de la línea
+            file >> idProducto;
+            file.ignore(1, ' ');
+            std::getline(file, nombreProducto, '|');
+            file >> cantidad >> precioUnitario;
+            file.ignore(1000, '\n');
+
+            ItemDevolucion item(idProducto, nombreProducto, cantidad, precioUnitario);
+            devolucion.agregarItem(item);
+        }
+
+        devoluciones.push_back(devolucion);
+    }
+
+    return devoluciones;
+}
 
 
 
@@ -402,33 +406,6 @@ int ManejadorArchivos::cargarUltimoIDMedioPago(const std::string& archivo) {
     return ultimoID;
 }
 
-/// IDs para VENTAS
-void ManejadorArchivos::guardarUltimoIDVenta(int ultimoID, const std::string& archivo) {
-    size_t pos = archivo.find_last_of("/\\");
-    if (pos != std::string::npos) {
-        std::string carpeta = archivo.substr(0, pos);
-        crearCarpetaSiNoExiste(carpeta);
-    }
-
-    std::ofstream file(archivo);
-    if (file) {
-        file << ultimoID;
-    }
-}
-
-int ManejadorArchivos::cargarUltimoIDVenta(const std::string& archivo) {
-    std::ifstream file(archivo);
-    int ultimoID = 9999;  // ← CAMBIAR: Empieza desde 10000 (9999 + 1)
-
-    if (file) {
-        file >> ultimoID;
-        if (ultimoID < 10000) {  // ← CAMBIAR: Validar desde 10000
-            ultimoID = 9999;
-        }
-    }
-    return ultimoID;
-}
-
 
 // IDs para FACTURAS
 void ManejadorArchivos::guardarUltimoIDFactura(int ultimoID, const std::string& archivo) {
@@ -456,3 +433,50 @@ int ManejadorArchivos::cargarUltimoIDFactura(const std::string& archivo) {
     }
     return ultimoID;
 }
+
+// IDs para DEVOLUCIONES
+void ManejadorArchivos::guardarUltimoIDDevolucion(int ultimoID, const std::string& archivo) {
+    size_t pos = archivo.find_last_of("/\\");
+    if (pos != std::string::npos) {
+        std::string carpeta = archivo.substr(0, pos);
+        crearCarpetaSiNoExiste(carpeta);
+    }
+
+    std::ofstream file(archivo);
+    if (file) {
+        file << ultimoID;
+    }
+}
+
+int ManejadorArchivos::cargarUltimoIDDevolucion(const std::string& archivo) {
+    std::ifstream file(archivo);
+    int ultimoID = 19999;  // Empieza desde 20000
+
+    if (file) {
+        file >> ultimoID;
+        if (ultimoID < 20000) {
+            ultimoID = 19999;
+        }
+    }
+    return ultimoID;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

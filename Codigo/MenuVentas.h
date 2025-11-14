@@ -11,9 +11,7 @@ public:
 
 private:
     void crearVenta(ListaVentas& listaVentas, Inventario& inventario, ListaMediosPago& listaMediosPago);
-    void anularVenta(ListaVentas& listaVentas);
-    void mostrarVentas(const ListaVentas& listaVentas);
-    void mostrarVentasActivas(const ListaVentas& listaVentas);
+
 };
 
 #endif

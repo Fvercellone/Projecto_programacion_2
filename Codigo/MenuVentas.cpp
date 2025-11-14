@@ -10,9 +10,6 @@ void MenuVentas::mostrarMenu(Inventario& inventario, ListaMediosPago& listaMedio
     do {
         cout << "\n=== GESTION DE VENTAS ===" << endl;
         cout << "1. Crear venta" << endl;
-        cout << "2. Mostrar todas las ventas" << endl;
-        cout << "3. Mostrar ventas activas" << endl;
-        cout << "4. Anular venta" << endl;
         cout << "0. Volver al menu principal" << endl;
         cout << "Seleccione una opcion: ";
 
@@ -23,18 +20,7 @@ void MenuVentas::mostrarMenu(Inventario& inventario, ListaMediosPago& listaMedio
                 system("cls");
                 crearVenta(listaVentas, inventario, listaMediosPago);
                 break;
-            case 2:
-                system("cls");
-                mostrarVentas(listaVentas);
-                break;
-            case 3:
-                system("cls");
-                mostrarVentasActivas(listaVentas);
-                break;
-            case 4:
-                system("cls");
-                anularVenta(listaVentas);
-                break;
+
             case 0:
                 cout << "Volviendo al menu principal..." << endl;
                 break;
@@ -49,34 +35,6 @@ void MenuVentas::crearVenta(ListaVentas& listaVentas, Inventario& inventario, Li
     cout << "\nPresione Enter para continuar...";
     cin.ignore();
     cin.get();
-}
-
-void MenuVentas::anularVenta(ListaVentas& listaVentas) {
-    int idVenta;
-
-    cout << "\n--- ANULAR VENTA ---" << endl;
-    cout << "Ingrese el ID de la venta a anular: ";
-    cin >> idVenta;
-
-    listaVentas.anularVenta(idVenta);
-    cout << "\nPresione Enter para continuar...";
-    cin.ignore();
-    cin.get();
     system("cls");
 }
 
-void MenuVentas::mostrarVentas(const ListaVentas& listaVentas) {
-    listaVentas.mostrarVentas();
-    cout << "\nPresione Enter para continuar...";
-    cin.ignore();
-    cin.get();
-    system("cls");
-}
-
-void MenuVentas::mostrarVentasActivas(const ListaVentas& listaVentas) {
-    listaVentas.mostrarVentasActivas();
-    cout << "\nPresione Enter para continuar...";
-    cin.ignore();
-    cin.get();
-    system("cls");
-}

@@ -1,19 +1,19 @@
 #ifndef MENUFACTURAS_H
 #define MENUFACTURAS_H
 
-#include "ListaFacturas.h"
-#include "ListaVentas.h"
+#include "Inventario.h"
+#include "Devolucion.h"
+#include "Manejo_Archivos.h"
 
 class MenuFacturas {
 public:
-    void mostrarMenu(ListaVentas& listaVentas);
+    void mostrarMenu(Inventario& inventario);
 
 private:
-    void generarFactura(ListaFacturas& listaFacturas, ListaVentas& listaVentas);
-    void anularFactura(ListaFacturas& listaFacturas);
-    void mostrarFacturas(const ListaFacturas& listaFacturas);
-    void mostrarFacturasActivas(const ListaFacturas& listaFacturas);
-    void mostrarFacturaCompleta(const ListaFacturas& listaFacturas);
+    void mostrarTodasFacturas();
+    void buscarFacturaPorID();
+    void realizarDevolucion(Inventario& inventario);
+    void mostrarTodasDevoluciones();
 };
 
 #endif

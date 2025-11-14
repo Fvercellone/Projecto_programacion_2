@@ -1,13 +1,13 @@
 #include "ListaVentas.h"
-#include "Manejo_Archivos.h"
+#include "Manejo_Archivos.h"  // ← Asegurar que este include existe
+#include "Factura.h"
 #include <iostream>
 #include <limits>
 
 using namespace std;
 
 ListaVentas::ListaVentas() {
-    ventas = ManejadorArchivos::cargarVentas();
-    ultimoID = ManejadorArchivos::cargarUltimoIDVenta();
+    // Constructor vacío - no necesitamos inicializar nada
 }
 
 void ListaVentas::crearVenta(Inventario& inventario, ListaMediosPago& listaMediosPago) {
@@ -39,6 +39,8 @@ void ListaVentas::crearVenta(Inventario& inventario, ListaMediosPago& listaMedio
 
                 if (contador == 0) {
                     cout << "No hay productos disponibles para vender.\n";
+                system("pause");
+                system("cls");
                     break;
                 }
 
@@ -50,6 +52,7 @@ void ListaVentas::crearVenta(Inventario& inventario, ListaMediosPago& listaMedio
                 Producto* producto = inventario.buscarProducto(idProducto);
                 if (!producto || !producto->getActivo()) {
                     cout << "Error: Producto no encontrado o inactivo.\n";
+                system("pause");                system("cls");
                     break;
                 }
 
@@ -58,11 +61,15 @@ void ListaVentas::crearVenta(Inventario& inventario, ListaMediosPago& listaMedio
 
                 if (cantidad <= 0) {
                     cout << "Error: Cantidad debe ser mayor a 0.\n";
+                    system("pause");
+                system("cls");
                     break;
                 }
 
                 if (cantidad > producto->getStock()) {
                     cout << "Error: Stock insuficiente. Stock disponible: " << producto->getStock() << "\n";
+                    system("pause");
+                system("cls");
                     break;
                 }
 
@@ -77,10 +84,10 @@ void ListaVentas::crearVenta(Inventario& inventario, ListaMediosPago& listaMedio
             }
 
             case 2: {
-                system("cls");
                 if (nuevaVenta.getItems().empty()) {
                     cout << "Error: No hay productos en la venta.\n";
-                    system("cls");
+                    system("pause");
+                system("cls");
                     break;
                 }
 
@@ -92,39 +99,74 @@ void ListaVentas::crearVenta(Inventario& inventario, ListaMediosPago& listaMedio
                 cout << "Ingrese ID del medio de pago: ";
                 cin >> idMedioPago;
 
-                 MedioPago* medio = listaMediosPago.buscarMedioPagoActivo(idMedioPago);
-                        if (!medio) {
-                            cout << "Error: Medio de pago no encontrado o inactivo.\n";
-                            break;
-                        }
+                MedioPago* medio = listaMediosPago.buscarMedioPago(idMedioPago);
+                if (!medio || !medio->getActivo()) {
+                    cout << "Error: Medio de pago no encontrado o inactivo.\n";
+                    system("pause");
+                system("cls");
+                    break;
+                }
 
                 // Configurar medio de pago
                 nuevaVenta.setMedioPago(medio->getIdMedioPago(), medio->getNombre(), medio->getAjuste());
 
-                // Generar ID y guardar
-                int nuevoID = generarNuevoID();
-                nuevaVenta.setIdVenta(nuevoID);
-
                 // Descontar stock
                 if (descontarStock(inventario, nuevaVenta)) {
-                    ventas.push_back(nuevaVenta);
-                    ManejadorArchivos::guardarVentas(ventas);
-                    cout << "\n=== VENTA FINALIZADA ===\n";
-                    nuevaVenta.mostrarVenta();
-                    cout << "ID de venta: " << nuevoID << "\n";
+                    // ========== FACTURA AUTOMÁTICA ==========
+                    // Cargar facturas existentes
+                    std::vector<Factura> facturas = ManejadorArchivos::cargarFacturas();
+                    int ultimoIDFactura = ManejadorArchivos::cargarUltimoIDFactura();
+                    int nuevoIDFactura = ultimoIDFactura + 1;
+
+                    // Crear nueva factura
+                    Factura facturaAutomatica;
+                    facturaAutomatica.generarDesdeVenta(nuevaVenta);
+                    facturaAutomatica.setIdFactura(nuevoIDFactura);
+
+                    // Datos del cliente
+                    string nombre, ruc;
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                    cout << "\n--- DATOS PARA FACTURA ---\n";
+                    cout << "Nombre del cliente (Enter para CONSUMIDOR FINAL): ";
+                    getline(cin, nombre);
+                    if (nombre.empty()) nombre = "CONSUMIDOR FINAL";
+
+                    cout << "Ingrese su DNI (Enter para 9999999999999): ";
+                    getline(cin, ruc);
+                    if (ruc.empty()) ruc = "9999999999999";
+
+                    facturaAutomatica.setCliente(nombre, ruc, "NO ESPECIFICADA");
+
+                    // Guardar SOLO la factura
+                    facturas.push_back(facturaAutomatica);
+                    ManejadorArchivos::guardarFacturas(facturas);
+                    ManejadorArchivos::guardarUltimoIDFactura(nuevoIDFactura);
+
+                    // Mostrar factura generada
+                    cout << "\n=== FACTURA GENERADA ===\n";
+                    facturaAutomatica.mostrarFacturaCompleta();
+                    cout << "ID de factura: " << nuevoIDFactura << "\n";
+                    // ========== FIN FACTURA AUTOMÁTICA ==========
                 } else {
                     cout << "Error al procesar la venta.\n";
+                    system("pause");
+                system("cls");
                 }
+                return;
             }
 
             case 0:
                 cout << "Venta cancelada.\n";
+                system("pause");
                 system("cls");
                 return;
 
             default:
                 cout << "Opcion no valida.\n";
-        } system("cls");
+                system("pause");
+                system("cls");
+        }
     } while(true);
 }
 
@@ -133,11 +175,15 @@ bool ListaVentas::descontarStock(Inventario& inventario, const Venta& venta) {
         Producto* producto = inventario.buscarProducto(item.getIdProducto());
         if (!producto) {
             cout << "Error: Producto no encontrado durante el descuento de stock.\n";
+            system("pause");
+                system("cls");
             return false;
         }
 
         if (producto->getStock() < item.getCantidad()) {
             cout << "Error: Stock insuficiente para " << producto->getNombre() << "\n";
+            system("pause");
+                system("cls");
             return false;
         }
 
@@ -155,63 +201,4 @@ void ListaVentas::restaurarStock(Inventario& inventario, const Venta& venta) {
         }
     }
     ManejadorArchivos::guardarProductos(inventario.getProductos());
-}
-
-void ListaVentas::anularVenta(int idVenta) {
-    Venta* venta = buscarVenta(idVenta);
-    if (venta && venta->getActivo()) {
-        venta->setActivo(false);
-        ManejadorArchivos::guardarVentas(ventas);
-        cout << "Venta anulada exitosamente.\n";
-    } else {
-        cout << "Error: Venta no encontrada o ya anulada.\n";
-    }
-}
-
-void ListaVentas::mostrarVentas() const {
-    cout << "=== TODAS LAS VENTAS ===\n";
-    if (ventas.empty()) {
-        cout << "No hay ventas registradas.\n";
-        return;
-    }
-
-    for (const auto& venta : ventas) {
-        venta.mostrarVenta();
-        cout << "------------------------\n";
-    }
-    cout << "Total ventas: " << ventas.size() << "\n";
-}
-
-void ListaVentas::mostrarVentasActivas() const {
-    cout << "=== VENTAS ACTIVAS ===\n";
-    int contador = 0;
-    for (const auto& venta : ventas) {
-        if (venta.getActivo()) {
-            venta.mostrarVenta();
-            cout << "------------------------\n";
-            contador++;
-        }
-    }
-    cout << "Total ventas activas: " << contador << "\n";
-}
-
-Venta* ListaVentas::buscarVenta(int id) {
-    for (auto& venta : ventas) {
-        if (venta.getIdVenta() == id) {
-            return &venta;
-        }
-        system("pause");
-    system("cls");
-    }
-    return nullptr;
-}
-
-const std::vector<Venta>& ListaVentas::getVentas() const {
-    return ventas;
-}
-
-int ListaVentas::generarNuevoID() {
-    ultimoID++;
-    ManejadorArchivos::guardarUltimoIDVenta(ultimoID);
-    return ultimoID;
 }

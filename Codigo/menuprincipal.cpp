@@ -25,7 +25,7 @@ void menuPrincipal(Inventario& inventario, ListaMarcas& listaMarcas) {
         cout << "2. Gestion de Marcas\n";
         cout << "3. Gestion de Medios de Pago\n";
         cout << "4. Gestion de Ventas\n";
-        cout << "5. Gestion de Facturas\n";
+        cout << "5. Historial y Reportes de Facturas\n";
         cout << "0. Salir del Sistema\n";
         cout << "========================================\n";
         cout << "Seleccione una opcion: ";
@@ -61,7 +61,10 @@ void menuPrincipal(Inventario& inventario, ListaMarcas& listaMarcas) {
 
             case 5:
                 system("cls");
-                menuFacturas.mostrarMenu(listaVentas);  // ← MISMA listaVentas
+                {
+                    MenuFacturas menuFacturas;
+                    menuFacturas.mostrarMenu(inventario);  // ← Solo inventario como parámetro
+                }
                 system("cls");
                 break;
 
